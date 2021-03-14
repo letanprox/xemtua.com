@@ -1,0 +1,40 @@
+<script>
+    $('title').append("Danh Sách Manga - Xem tua");
+
+    window.onload = function(){
+        $('<script />', { type : 'text/javascript', src : "/xemtua.com/js/menu/LoadForm.js"}).appendTo('head');
+        $('<script />', { type : 'text/javascript', src : "/xemtua.com/js/LOADJS/AllAnimePage.js"}).appendTo('head');
+    }
+</script>
+
+<div class="content">
+        <div class="contain_anime">
+        </div>
+
+        <div class="icon_load_shortvideo">
+            <div class="LoadingVideo_Content">
+                <div class="Wrap_loading">
+                    <div class="Loading"></div>
+                    <div id="cor_one"></div>
+                    <div id="cor_two"></div>
+                </div>
+            </div> 
+        </div>
+        <div onclick="loadMore()" class="load_more_shortvideo">xem thêm</div>
+
+</div>
+
+<style>
+.title:hover{
+    color: white;
+}
+.wrap_item a:nth-child(2) div{
+    background-color: red;
+}
+.wrap_item_mb a:nth-child(3) div{
+    background-color: red;
+}
+.contain_anime{
+    margin-top: 20px;
+}
+</style>

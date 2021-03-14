@@ -1,0 +1,44 @@
+@media only screen and (min-width: 992px) {
+.switch_tray{
+    width: 270px;
+}
+.width_manga{
+    width: 70%;
+}
+.height_manga{
+    width: 60%;
+}
+.title_manga{
+    font-size: 40px;
+}
+}
+@media only screen and (min-width: 768px)  and (max-width: 992px) {
+.switch_tray{
+    width: 220px;
+}
+.width_manga{
+    width: 90%;
+}
+.height_manga{
+    width: 80%;
+}
+.title_manga{
+    font-size: 35px;
+}
+}
+@media only screen and (max-width: 768px){
+.switch_tray{
+    width: 170px;
+}
+.width_manga{
+    width: calc(100% - 14px);
+}
+.height_manga{
+    width: calc(100% - 14px);
+}
+
+.title_manga{
+    font-size: 28px;
+}
+
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>TAB PANEL</title>
+</head>
+<body>
+    <br>
+    <br>
+
+    <div class="insert_contain">
+    </div>
+    <button  type="submit" id="INSERT">INSERT</button>
+    <br>
+    <br>
+    <br>
+    <div>
+        <input type="text"  placeholder="tim kiem"  id="SEARCH_TEXT">
+        <input type="text"  placeholder="tim kiem"  id="SEARCH_TEXT1">
+        <button type="submit" id="SEARCH">SEARCH</button>
+    </div>
+    <br>
+    
+    <div class="update_contain" >
+    </div>
+    <button  type="submit" id="UPDATE">UPDATE</button>
+    <button  type="submit" id="DELETE">DELETE</button>
+
+</body>
+</html>
+
+<script>
+/// GET DELETE UPDATE INSERT
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var model = url.searchParams.get("model");
+var password = url.searchParams.get("password");
+
+var item;
+var stringlist = [];
+var url_update;
+var url_delete;
+var url_insert;
+var url_search;
+
+var value_group;
+var value_group_;
+
+function setURL(name,value_group,value_group_,value_group1,value_group1_){
+    url_delete = name+"_delete"+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;
+    url_update = name+"_update"+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;
+    url_insert = name+"_insert"+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;
+    url_search = name+"_search"+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;
+}
+
+function getCurrentTime(){
+    var today = new Date();
+    var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return date+' '+time;
+}
+
+function setInsert (){
+    var element  = '';
+    for(let i = 0; i < item.length; i++)
+    element = element + '<input type="text"  placeholder="'+item[i]+'"    id="'+item[i]+'">';
+    $('.insert_contain').append(element);
+}
+
+
+/////////////////////
+
+
+if(model === "tap"){
+    item = ['so_tap' , 'so_mua', 'ten_tap' , 'luot_xem' , 'anh_bia' , 'id_token_fb' ];
+    stringlist = [2,4];
+    setURL("tap","x","x");
+}
+
+
+if(model === "binhluans"){
+    item = ['_id' , 'id_facebook' , 'ten_chat' , 'noi_dung' , 'thoi_gian'];
+    stringlist = [2];
+    setURL("binhluans","x","x");
+
+}
+
+if(model === "binhluan"){
+    item = [ 'id_' ,'id_nguoi_dung' , 'noi_dung' , 'thoi_gian'];
+    setURL("binhluan","so_tap",url.searchParams.get("so_tap"));
+  
+}
+
+
+if(model === "mua"){
+    item = ['so_mua' , 'ten_mua' , 'khoang_tap'];
+    setURL("mua","x","x");
+
+}
+
+
+if(model === "phim"){
+    item = ['so_phim' , 'ten_phim' , 'thoi_luong' , 'luot_xem' , 'anh_bia' , 'id_token_fb'];
+    setURL("phim","x","x");
+  
+}
+
+if(model === "chaps"){
+    item = ['so_chap' , 'anh_bia' ];
+    stringlist = [1];
+    setURL("chaps","x","x");
+}
+
+
+if(model === "anhchap"){
+    item = ['stt' , 'anh' , 'anh_ngang' ];
+    stringlist = [1];
+    setURL("anhchap","so_chap",url.searchParams.get("so_chap"));
+}
+
+
+if(model === "tin"){
+    item = ['_id' , 'ten_tin' , 'anh_bia' , 'mo_ta' , 'ngay_dang' , 'luot_xem' , 'noi_dung'];
+    stringlist = [1,2,3,4,6];
+    setURL("tin","x","x");
+}
+
+if(model === "nguoidung"){
+    item = ['_id' , 'id_facebook' , 'anh_dai_dien' , 'ten_nguoi_dung'];
+    stringlist = [1,2,3];
+    setURL("nguoidung","x","x");
+}
+
+if(model === "tokenfbs"){
+    item = ['id_token' , 'token'];
+    stringlist = [];
+    setURL("tokenfbs","x","x");
+}
+
+if(model === "taptokenfb"){
+    item = [ 'so_tap' ,'id_video_fb'];
+    setURL("taptokenfb","id_token",url.searchParams.get("id_token"));
+}
+
+if(model === "phimtokenfb"){
+    item = [ 'so_phim' ,'id_video_fb'];
+    setURL("phimtokenfb","id_token",url.searchParams.get("id_token"));
+}
+
+if(model === "danhsachurlfb"){
+    item = ['so_tap' , 'url' , 'thoi_gian'];
+    stringlist = [1];
+    setURL("danhsachurlfb","x","x");
+}
+/////////////////////
+if(model === "danhsachtokenshortvideo"){
+    item = ['id_token' , 'token'];
+    setURL("danhsachtokenshortvideo","x","x");
+}
+
+if(model === "danhsachurlshortvideo"){
+    item = ['index' , 'url_temp','thoi_gian'];
+    setURL("danhsachurlshortvideo","x", "x");
+}
+
+if(model === "danhsachlinkshortvideo"){
+    item = ['index' , 'url_temp','thoi_gian'];
+    setURL("danhsachlinkshortvideo","x", "x");
+}
+
+
+if(model === "danhsachshortvideo"){
+    item = [ 'index' , 'url_thumbnail' , 'views' , 'id_video' , 'id_token' , 'url_drive'];
+    stringlist = [1,5];
+    setURL("danhsachshortvideo","x", "x");
+}
+
+if(model === "relate"){
+    item = [ 'dex' , 'va'];
+    setURL("relate","index",url.searchParams.get("index"));
+}
+
+if(model === "celate"){
+    item = ['index'];
+    setURL("celate","x","x");
+}
+//////////////////////////
+
+if(model === "danhsachvideodirect"){
+    item = ['so_tap' , 'url' , 'thoi_gian'];
+    stringlist = [1];
+    setURL("danhsachvideodirect","x","x");
+}
+
+if(model === "danhsachvideoembed"){
+    item = ['so_tap' , 'url' , 'thoi_gian'];
+    stringlist = [1];
+    setURL("danhsachvideoembed","x","x");
+}
+if(model === "danhsachphimembed"){
+    item = ['so_phim' , 'url' , 'thoi_gian'];
+    stringlist = [1];
+    setURL("danhsachphimembed","x","x");
+}
+setInsert();
+
+document.getElementById("thoi_gian").value = getCurrentTime();
+
+</script>
+
+<script src="/CPanel/Panel_custom/panel_control.js"></script>
+<link rel="stylesheet" href="/CPanel/Panel_custom/panel_control.css">

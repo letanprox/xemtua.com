@@ -1,0 +1,24 @@
+.number_page{
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    max-width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.number_page span{
+    float: left;
+    margin: 4px;
+    padding: 5px 10px;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.493);
+    border: 1px solid rgba(255, 255, 255, 0.329);
+    cursor: pointer;
+    color: white;
+}
+#chose_page{
+    background-color: red;
+}

@@ -1,0 +1,114 @@
+.tray_newep{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: auto;
+    width: 100%;
+    margin-top: 5px;  
+}
+.contain_newep{
+    position: relative;
+    float: left;
+    height: auto;
+    width: 100%;
+    border-radius: 3px;
+    opacity:1;
+}
+.item_newep{
+    position: relative;
+    margin: 7px 0px 0px 7px;
+    overflow: hidden;
+    float: left;
+}
+
+.item_newep img{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.info_newep{
+    background-color: transparent;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+
+}
+
+.blankblack_item_newep{
+    position: relative;
+    height: auto;
+    color: white;
+    background-image: linear-gradient(to bottom,transparent,rgb(29, 29, 29));
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+
+}
+.title_item_newep{
+    position: absolute;
+    bottom: 5px;
+    height: auto;
+    color: white;
+    font-size: medium;
+    width: 100%;
+    z-index: 4;
+}
+
+.title_item_newep div:nth-child(1){
+    overflow: hidden;
+    width: calc(100% - 10px);
+    max-height: 24px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: white;
+
+}
+.title_item_newep div:nth-child(2){
+    overflow: hidden;
+    width: calc(100% - 110px);
+    max-height: 15px;
+    margin-left: 5px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: white;
+    float: left;
+
+
+}
+.title_item_newep div:nth-child(3){
+    overflow: hidden;
+    width: calc(100px);
+    max-height: 15px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: white;
+    float: right;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.loading_item_newep{
+    position: relative;
+    margin: 7px 0px 0px 7px;
+    overflow: hidden;
+    float: left;
+    border-radius: 4px;
+    background-color: rgba(58, 58, 58, 0.596);
+}

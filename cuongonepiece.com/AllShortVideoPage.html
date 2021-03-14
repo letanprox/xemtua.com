@@ -1,0 +1,52 @@
+<script>
+    $('title').append("Danh Sách Video Edit - Cuồng One Piece");
+
+    window.onload = function(){
+        $('<script />', { type : 'text/javascript', src : "/cuongonepiece.com/js/menu/LoadForm.js"}).appendTo('head');
+        $('<script />', { type : 'text/javascript', src : "/cuongonepiece.com/js/LOADJS/AllShortVideoPage.js"}).appendTo('head');
+    }
+    document.getElementById("search_bar").placeholder = "Nhập số index";
+</script>
+
+<div class="content">
+
+    <div class="tray_user_shortvideo">
+    </div>
+
+    <div class="info_user_shortvideo">
+    </div>
+
+    <div class="tray_shortvideo">
+        <a href="/videoedit"><div class="title">VIDEO EDIT <i class="fa fa-angle-right"></i></div></a>
+        <div class="switch_list_video">
+            <span id="relate_btn">đề xuất</span>
+            <span id="news_btn">mới nhất</span>
+            <span id="views_btn">lượt xem</span>
+        </div>
+        <div class="contain_shortvideo">
+        </div>
+
+        <div class="icon_load_shortvideo">
+            <div class="LoadingVideo_Content">
+                <div class="Wrap_loading">
+                    <div class="Loading"></div>
+                    <div id="cor_one"></div>
+                    <div id="cor_two"></div>
+                </div>
+            </div> 
+        </div>
+        <div class="load_more_shortvideo">xem thêm</div>
+    </div>
+</div>
+
+<style>
+.title:hover{
+    color: white;
+}
+.wrap_item a:nth-child(2) div{
+    background-color: red;
+}
+.wrap_item_mb a:nth-child(2) div{
+    background-color: red;
+}
+</style>

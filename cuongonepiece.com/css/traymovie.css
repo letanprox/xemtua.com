@@ -1,0 +1,114 @@
+.tray_movie{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+    height: auto;
+    width: 100%;
+}
+.content_tray_movie{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+.item_content_tray_movie{
+    position: relative;
+    overflow: hidden;
+    margin-top: 7px;
+    margin-left: 7px;
+    float: left;
+    cursor: pointer;
+}
+.hover_item_content_tray_movie{
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hover_item_content_tray_movie:hover{
+    background-color: black;
+    opacity: 0.7;
+}
+.part_1_item_content_tray_movie{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-left: 0;
+    margin-top: 0;
+    height: calc(100% - 50px);
+    width: 100%;
+}
+.part_1_item_content_tray_movie div{
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    background-color:tomato;
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.486);
+    z-index: 1;
+}
+.part_1_item_content_tray_movie img{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.part_2_item_content_tray_movie{
+    float: left;
+    margin-left: 0;
+    margin-top: 0;
+    height: 50px;
+    width: 100%;
+    border-radius: 0px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+.part_2_item_content_tray_movie div:first-child{
+    float: left;
+    margin-top: 7px;
+    margin-left: 5px;
+    max-height: 19px;
+    width: calc(100% - 10px);
+    overflow: hidden;
+    font-size: 17px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: rgb(161, 185, 255);
+}
+.part_2_item_content_tray_movie div:first-child:hover{
+    color: tomato;
+}
+.part_2_item_content_tray_movie div:last-child{
+    float: left;
+    margin-top: 6px;
+    margin-left: 5px;
+    height: auto;
+    width: calc(100% - 10px);
+    font-size: 12px;
+}
+
+.loading_item_movie{
+    position: relative;
+    overflow: hidden;
+    margin-top: 7px;
+    margin-left: 7px;
+    background-color: rgba(58, 58, 58, 0.596);
+    border-radius: 10px;
+    float: left;
+    cursor: pointer;
+}

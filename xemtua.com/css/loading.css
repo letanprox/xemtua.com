@@ -1,0 +1,103 @@
+.LoadingVideo_Content{
+    position: absolute; 
+    height: 50px;            /*change*/
+    width: 50px;             /*change*/
+    left: calc(50% - 25px);  /*change*/
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;  
+}
+.LoadingVideo{
+    position: absolute; 
+    height: 50px;            /*change*/
+    width: 50px;             /*change*/
+    left: calc(50% - 25px);  /*change*/
+    top: 70px;
+    z-index: 1;
+ }
+.Wrap_loading{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: rotate_spin_loading 0.9s linear infinite;
+    opacity: 0.8;
+
+}
+@keyframes rotate_spin_loading {
+      0% { transform: (0deg) }
+      100% { transform: rotate(360deg) }
+    } 
+.Loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -20%;              /*change*/
+    left: -20%;             /*change*/
+    border: 10px solid;    /*change*/
+    border-color: rgb(46, 46, 46) transparent rgb(46, 46, 46)  transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+
+}
+
+#cor_one:before{
+    content: "";
+    position: absolute;
+    left:  50%;
+    transform: translateX(-50%);
+    top: -19.5%;/*change*/
+    width: 19%;/*change*/
+    height: 19%;/*change*/
+    border-radius: 50%;
+    background-color: rgb(46, 46, 46) ;
+}
+
+#cor_one:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -19.3%;/*change*/
+    width: 19%;/*change*/
+    height: 19%;/*change*/
+    border-radius: 50%;
+    background-color: rgb(46, 46, 46) ;
+}
+
+#cor_two:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20%;/*change*/
+    width: 19%;/*change*/
+    height: 19%;/*change*/
+    border-radius: 50%;
+    background-color: rgb(46, 46, 46) ;
+}
+
+#cor_two:after{
+    content: "";
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: -19.3%;/*change*/
+    width: 19%;/*change*/
+    height: 19%;/*change*/
+    border-radius: 50%;
+    background-color: rgb(46, 46, 46) ;
+}
+
+#customiframe{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

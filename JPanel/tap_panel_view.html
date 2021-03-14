@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>TAP PANEL</title>
+</head>
+<body>
+    <br>
+    <br>
+
+    <span class="list_contain_title">
+
+    </span>
+    <br>
+    <br>
+
+    <span class="list_contain"></span>
+
+    <span class="list_number_page"></span>
+
+</body>
+</html>
+
+<script> /// GET AND DELETE
+
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var model = url.searchParams.get("model");
+var password = url.searchParams.get("password");
+
+var stringlist = [];
+
+var item;
+var url_count;
+var url_delete;
+var url_getlist;
+
+var value_group;
+var value_group_;
+var value_group1;
+var value_group1_;
+
+
+function setURL(name,x,y,x1,y1){
+    url_count = name+"_count";
+    url_delete = name+"_delete";
+    url_getlist = name+"_search";
+    value_group = x;
+    value_group_ = y;
+    value_group1 = x1;
+    value_group1_ = y1;
+}
+
+
+function setInsert (){
+
+var element  = '';
+for(let i = 0; i < item.length; i++) element = element + '<div>'+item[i]+'</div>';
+$('.list_contain_title').append('<span class="one_item">'+element+'</span>');
+}
+
+if(model === "idtapfb"){
+    item = [ 'so_tap' , 'so_phim' , 'id_video_fb' ];
+    setURL("idtapfb","id_token",url.searchParams.get("id_token"));
+}
+
+
+if(model === "binhluans"){
+    item = [ '_id' , 'so_phim' , 'so_tap' , 'so_phimle' ,'id_facebook' , 'ten_chat' , 'noi_dung' , 'thoi_gian' ];
+    setURL("binhluans" , "x" , "x");
+}
+
+
+
+setInsert();
+
+</script>
+
+<script src="/JPanel/Panel_custom/panel_view.js"></script>
+<link rel="stylesheet" href="/JPanel/Panel_custom/panel_view.css">

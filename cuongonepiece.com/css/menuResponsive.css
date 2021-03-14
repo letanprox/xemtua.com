@@ -1,0 +1,129 @@
+@media only screen and (min-width: 992px) {
+.nav_bar{
+    width: 992px;
+}
+.search_wall{
+    margin: 0;
+    width: 100%;
+}
+.wrap_logo{
+    margin-left: 7px;
+}
+.wrap_search{
+    width: 400px;
+    margin-right: 7px; /*border item*/
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0px;
+    border-bottom: none;
+    background-color: transparent;
+}
+.wrap_item div{
+    border-radius: 30px;
+}
+.mark_item , .wrap_item_mb , .mark_search{
+    display: none;
+}
+.wrap_item , .wrap_search{
+    display: block;
+}
+}
+
+
+
+@media only screen and (min-width: 768px)  and (max-width: 992px) {
+.nav_bar{
+    width: 100%;
+}
+.search_wall{
+    margin: 0px;
+    width: 100%;
+}
+.wrap_logo{
+    margin-left: 32px;
+}
+.wrap_search{
+    width:calc(100% - 550px);
+    margin-right: 32px; /*border item*/
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px;
+    margin-top: 0px;
+    border-bottom: none;
+    background-color: transparent;
+}
+.wrap_item div{
+    border-radius: 7px;
+}
+.mark_item , .wrap_item_mb , .mark_search{
+    display: none;
+}
+.wrap_item , .wrap_search{
+    display: block;
+}
+}
+
+
+@media only screen and (min-width: 600px)  and (max-width: 768px) {
+.nav_bar{
+    width: 100%;
+}
+.wrap_logo{
+    margin-left: 17px;
+}
+.mark_search{
+    margin-right: 17px;
+}
+.wrap_item_mb{
+    padding-left: 17px;
+}
+.search_wall{
+    margin-right: 17px;
+    width: calc(100% - 17*2px);
+}
+.wrap_search{
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    margin-right: 0px;
+    top: 0%;
+    transform: translateY(0%);
+}
+.mark_item , #mark_show_item , .mark_search , #mark_show_search{
+    display: block;
+}
+.wrap_search ,#mark_close_item, .wrap_item_mb , .wrap_item , #mark_close_search {
+    display: none;
+}
+}
+
+
+@media only screen and (max-width: 600px){ /* - 599*/
+.nav_bar{
+    width: 100%;
+}
+.wrap_logo{
+    margin-left: 7px;
+}
+.mark_search{
+    margin-right: 7px;
+}
+.wrap_item_mb{
+    padding-left: 7px;
+}
+.search_wall{
+    margin-right: 7px;
+    width: calc(100% - 7*2px);
+}
+.wrap_search{
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    top: 0%;
+    transform: translateY(0%);
+}
+.mark_item , #mark_show_item , .mark_search , #mark_show_search{
+    display: block;
+}
+.wrap_search ,#mark_close_item, .wrap_item_mb , .wrap_item , #mark_close_search {
+    display: none;
+}
+}

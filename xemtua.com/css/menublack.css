@@ -1,0 +1,6 @@
+.search_wall{
+    background-color: white;
+}
+#mark_close_item , #mark_show_item , #mark_close_search , #mark_show_search{
+    fill: white;
+}

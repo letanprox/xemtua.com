@@ -1,0 +1,119 @@
+.LoadingVideo{
+
+}
+.contain_list_season_player_slide{
+
+}
+.contain_list_item_player_slide , .contain_list_movie_player_slide{
+    min-height: 180px;
+}
+.list_item_player_slide , .list_movie_player_slide , .contain_list_message_player_slide{
+    background-color: rgb(29, 29, 29);
+}
+.contain_list_season_player_slide div:last-child{
+
+}
+
+
+@media only screen and (min-width: 992px) {
+.player_content { /*change*/
+    width: calc(65% - 7px);
+    margin-left: 7px;
+}
+.info_player{
+    width: calc(100% - 34px);
+    margin-left: 7px;
+}
+
+.contain_video{
+    height: 362px;
+}
+
+.player_slide{
+    width:calc(35% - 5px - 7px);
+    max-height: auto;
+    height: auto;
+    margin: 5px 0px 0px 5px;
+}
+.contain_list_message_player_slide{
+    max-height: none;
+    height: auto;
+}
+}
+@media only screen and (min-width: 768px)  and (max-width: 992px) {
+.player_content{ /*change*/
+    width: calc(100% - 14px);
+    margin-left: 7px;
+}
+.info_player{
+    width: calc(100% - 34px);
+    margin-left: 7px;
+}
+
+.contain_video{
+    height: auto;
+}
+
+.player_slide{
+    width:calc(100% - 14px);
+    max-height: none;
+    height: auto;
+    margin: 5px 0px 0px 7px;
+}
+.contain_list_message_player_slide{
+    max-height: none;
+    height: auto;
+}
+
+}
+@media only screen and (min-width: 600px)  and (max-width: 768px){
+.player_content  , .info_player{ /*change*/
+    width: calc(100% - 14px);
+    margin-left: 7px;
+}
+.info_player{
+    width: calc(100% - 34px);
+    margin-left: 7px;
+}
+.contain_video{
+    height: auto;
+}
+
+
+.player_slide{
+    width:calc(100% - 14px);
+    max-height: none;
+    height: auto;
+    margin: 5px 0px 0px 7px;
+}
+.contain_list_message_player_slide{
+    max-height: none;
+    height: auto;
+}
+
+}
+@media only screen and (max-width: 600px)  {
+.player_content , .info_player{ /*change*/
+    width: 100%;
+    margin-left: 0%;
+}
+.info_player{
+    width: calc(100% - 20px);
+    margin-left: 0px;
+}
+.contain_video{
+    height: auto;
+}
+
+
+.player_slide{
+    width:100%;
+    max-height: none;
+    height: auto;
+    margin: 5px 0px 0px 0px;
+}
+.contain_list_message_player_slide{
+    max-height: none;
+    height: auto;
+}
+}

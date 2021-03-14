@@ -1,0 +1,62 @@
+.tray_manga{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: auto;
+    background-color: white;
+    margin-top: 20px;
+}
+.content_tray_manga{
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 570px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    cursor: pointer;
+}
+.content_tray_manga img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    -webkit-filter: brightness(79%);
+}
+.text_chapter_content_tray_manga{
+    float: left;
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    background-image: linear-gradient(to right,royalblue,rgba(255, 99, 71, 0.931));
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    margin: 10px;
+}
+.button_read_manga{
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 7px;
+
+    z-index: 1;
+    background-color: rgb(65, 105, 225);
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+.button_read_manga:hover{
+    background-color: rgb(185, 111, 255);
+}

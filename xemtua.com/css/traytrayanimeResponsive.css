@@ -1,0 +1,41 @@
+.title{
+    margin: 7px 7px 4px 7px;
+    width: calc(100% - 14px);
+}
+@media only screen and (min-width: 992px) {
+
+.item_anime , .loading_item_anime{
+    height: 300px;
+    width: calc((100% / 3) - 7px - 3px);
+}
+
+
+}
+@media only screen and (min-width: 768px)  and (max-width: 992px) {
+
+.item_anime, .loading_item_anime{
+    height: 280px;
+    width: calc((100% / 3) - 7px - 3px);
+}
+
+
+
+
+}
+@media only screen and (min-width: 600px)  and (max-width: 768px){
+
+.item_anime, .loading_item_anime{
+    height: 280px;
+    width: calc((100% / 2) - 11px);
+}
+
+
+}
+@media only screen and (max-width: 600px){
+
+.item_anime , .loading_item_anime{
+    height: 250px;
+    width: calc((100% / 2) - 11px);
+}
+
+}

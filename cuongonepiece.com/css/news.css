@@ -1,0 +1,59 @@
+.contain_news{
+    position: relative;
+    float: left;
+    width: calc(100% - 310px);
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+}
+.news_title{
+    font-size: 23px;
+}
+.news_info{
+    font-size: 15px;
+    margin-top: 15px;
+    color: tomato;
+}
+.news_content{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.news_content div{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.news_content img{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.contain_suggest{
+    position: relative;
+    float: right;
+    height: auto;
+    margin-top: 15px;
+}
+.title_suggest_news{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    font-size: small;
+    color: red;
+    padding-bottom:5px;
+    border-bottom: 1px solid rgb(136, 136, 136);
+}
+
+.title_tray_manga_news{
+    position: relative;
+    width: 100%;
+    float: left;
+    color: black;
+    font-size: 17px;
+}

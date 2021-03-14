@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>TAP PANEL</title>
+</head>
+<body>
+    <br>
+    <br>
+
+    <div class="insert_contain">
+    </div>
+    <button  type="submit" id="INSERT">INSERT</button>
+    <br>
+    <br>
+    <br>
+    <div>
+        <input type="text"  placeholder="tim kiem"  id="SEARCH_TEXT">
+        <button type="submit" id="SEARCH">SEARCH</button>
+    </div>
+    <br>
+    
+    <div class="update_contain" >
+    </div>
+    <button  type="submit" id="UPDATE">UPDATE</button>
+    <button  type="submit" id="DELETE">DELETE</button>
+
+</body>
+</html>
+
+<script>
+/// GET DELETE UPDATE INSERT
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var model = url.searchParams.get("model");
+var password = url.searchParams.get("password");
+
+var item;
+var stringlist = [];
+var url_update;
+var url_delete;
+var url_insert;
+var url_search;
+
+var value_group;
+var value_group_;
+
+function setURL(name,value_group,value_group_){
+    url_delete = name+"_delete"+"?"+value_group+"="+value_group_;
+    url_update = name+"_update"+"?"+value_group+"="+value_group_;
+    url_insert = name+"_insert"+"?"+value_group+"="+value_group_;
+    url_search = name+"_search"+"?"+value_group+"="+value_group_;
+}
+
+function getCurrentTime(){
+    var today = new Date();
+    var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return date+' '+time;
+}
+
+function setInsert (){
+    var element  = '';
+    for(let i = 0; i < item.length; i++)
+    element = element + '<input type="text"  placeholder="'+item[i]+'"    id="'+item[i]+'">';
+    $('.insert_contain').append(element);
+}
+
+if(model === "danhsachtokenshortvideo"){
+    item = ['id_token' , 'token'];
+    setURL("danhsachtokenshortvideo","x","x");
+}
+
+if(model === "danhsachurlshortvideo"){
+    item = ['index' , 'url_temp','thoi_gian'];
+    setURL("danhsachurlshortvideo","x", "x");
+}
+
+if(model === "danhsachshortvideo"){
+    item = [ 'index' , 'url_thumbnail' , 'views' , 'id_video' , 'id_token' , 'url_drive'];
+    stringlist = [1,5];
+    setURL("danhsachshortvideo","x", "x");
+}
+
+if(model === "relate"){
+    item = [ 'dex' , 'va'];
+    setURL("relate","index",url.searchParams.get("index"));
+}
+
+if(model === "celate"){
+    item = ['index'];
+    setURL("celate","x","x");
+}
+
+if(model === "phim"){
+    item = [ 'so_phim'  , 'ten_phim'  , 'anh_bia' ,'luot_xem' , 'tu_khoa' , 'tap_moi' , 'dem_so'];
+    stringlist = [1,2]
+    setURL("phim","x","x");
+}
+
+if(model === "truyen"){
+    item = ['so_truyen' , 'ten_truyen' ,'anh_bia' , 'luot_xem' , 'tu_khoa' , 'chap_moi' , 'dem_so'];
+    setURL("truyen","x","x");
+}
+
+setInsert();
+
+document.getElementById("thoi_gian").value = getCurrentTime();
+
+</script>
+
+<script src="/JPanel/Panel_custom/panel_control.js"></script>
+<link rel="stylesheet" href="/JPanel/Panel_custom/panel_control.css">
