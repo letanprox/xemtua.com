@@ -41,9 +41,7 @@ xhttp.onreadystatechange = function() {
 
             isloaded_ep = true;
             scrollBarList();
-            hideLoadingVideo();
-            
-            loadCheckLink();
+            hideLoadingVideo(); 
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadSeason")){
@@ -88,8 +86,6 @@ xhttp.onreadystatechange = function() {
             isloaded_movie = true;
             scrollBarList();
             hideLoadingVideo(); 
-
-            loadCheckLink();
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadPlayerOva")){
@@ -125,8 +121,6 @@ xhttp.onreadystatechange = function() {
             isloaded_ova = true;
             scrollBarList();
             hideLoadingVideo(); 
-
-            loadCheckLink();
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadListEp")){
@@ -458,7 +452,7 @@ function loadCheckLink(){
     }else if(main_element === 3){
         urlloadCheck = "checkLinkOva?soova="+soova+"&sophim="+sophim;
     }
-    xhttp.open("GET", URLServer+urlloadCheck, true);
+    xhttp.open("GET", URLServer+urlloadCheck, false);
     xhttp.send();
 }
 // function loadLinkFb(){
@@ -498,3 +492,5 @@ if(window.location.href.split("/")[3] === 'episode'){
     loadOva();
     document.getElementById("next_ep").style.display = "none";
 }
+
+loadCheckLink();
