@@ -272,7 +272,7 @@ module.exports = async (callback, scanner) => {
         let linkfb = await LoadVideoTapFB( Number(head_params.get('sophim')) , Number(head_params.get('sotap')) ,scanner);
         if(linkfb === "that bai") linkfb = "false";
 
-        if(select.length > 0)callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
+        if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
 
