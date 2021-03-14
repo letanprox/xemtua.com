@@ -8,12 +8,14 @@ const route = require("./Route");
 //RETURN REQUEST BUNDLE
 module.exports =  (req,returnRoute) => {
 
-    console.log(req.headers.host)
+  
 
     if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
     if(String(req.headers.host).includes("xemtua")){ 
         console.log("XXXXXX")
-        req.headers.host = "www.xemtua.com";}
+        req.headers.host = "www.xemtua.com";
+        console.log(req.headers.host)
+    }
 
     let filePath = route(req.headers.host,req.method,req.url,returnRoute);
     let index;
