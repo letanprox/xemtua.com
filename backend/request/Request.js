@@ -9,8 +9,7 @@ const route = require("./Route");
 module.exports =  (req,returnRoute) => {
 
     if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
-    if(req.headers.host === "www.xemtua.xyz") req.headers.host = "www.xemtua.com";
-    if(req.headers.host === "xemtua.xyz") req.headers.host = "www.xemtua.com";
+    if(String(req.headers.host).includes("xemtua")) req.headers.host = "www.xemtua.com";
 
     let filePath = route(req.headers.host,req.method,req.url,returnRoute);
     let index;
