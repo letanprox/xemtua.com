@@ -8,6 +8,8 @@ const route = require("./Route");
 //RETURN REQUEST BUNDLE
 module.exports =  (req,returnRoute) => {
 
+    console.log(req.headers.host)
+
     if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
     if(String(req.headers.host).includes("xemtua")) req.headers.host = "www.xemtua.com";
 
