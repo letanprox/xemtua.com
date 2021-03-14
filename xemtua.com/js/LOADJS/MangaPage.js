@@ -38,7 +38,7 @@ function loadChap(){
 
 function loadElementChap(data){
     var listchaps = data.chaps;
-
+    sochap = data.sochap
     var elements = '';
     $('.switch_tray').empty();
     for(var i = 0; i < listchaps.length ; i++){

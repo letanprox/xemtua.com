@@ -53,6 +53,7 @@ module.exports = async (callback, scanner) => {
             select = await scanner["modelxxemtua.com/danhsachchap"].dataModel.select(query, projection, sort, skip, limit);
             data['chaps'] = select;
             data.tentruyen = tentruyen;
+            data.sochap = sochap;
 
             await scanner["modelxxemtua.com/danhsachtruyen"].dataModel.update({so_truyen: Number(sotruyen)}, {$inc:{luot_xem: 1}});
 
