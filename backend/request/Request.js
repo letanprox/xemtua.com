@@ -9,7 +9,6 @@ const route = require("./Route");
 module.exports =  (req,returnRoute) => {
 
     if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
-    if(req.headers.host === "47.241.122.96") req.headers.host = "www.xemtua.com";
     if(req.headers.host === "www.xemtua.xyz") req.headers.host = "www.xemtua.com";
     if(req.headers.host === "xemtua.xyz") req.headers.host = "www.xemtua.com";
 

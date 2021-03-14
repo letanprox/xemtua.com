@@ -79,8 +79,6 @@ let SERVER = async (db) => {
         scanner['modelx'+listModel[i]] = await fx(db);
     }
     http.createServer((req, res) => {
-
-        console.log("hasrequest" + req.headers.host);
         
             scanner.req = req;
             scanner.res = res;
