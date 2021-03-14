@@ -10,12 +10,9 @@ module.exports =  (req,returnRoute) => {
 
   
 
-    if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
-    if(String(req.headers.host).includes("xemtua")){ 
-        console.log("XXXXXX")
-        req.headers.host = "www.xemtua.com";
-        console.log(req.headers.host)
-    }
+    if(req.headers.host === "localhost") req.headers.host = "www.xemtua.com";
+    if(String(req.headers.host).includes("xemtua")){ req.headers.host = "www.xemtua.com";}
+    if(String(req.headers.host).includes("cuongonepiece")){ req.headers.host = "www.cuongonepiece.com";}
 
     let filePath = route(req.headers.host,req.method,req.url,returnRoute);
     let index;
@@ -32,6 +29,7 @@ module.exports =  (req,returnRoute) => {
         index = str.substring(str.indexOf("@") + 1, str.length);  
     }
     filePath = decodeURI(filePath);
+
     return {
         status,
         filePath,

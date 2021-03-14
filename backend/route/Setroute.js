@@ -1,8 +1,8 @@
 class SetRoute{
     constructor() {
         this.listFile = {"state":[]};
-        this.listFile.state["xemtua.com"] = [];
         this.listFile.state["cuongonepiece.com"] = [];
+        this.listFile.state["xemtua.com"] = [];
     }
     pushRoute(root,method,name,file){
         if(!file.includes("Panel")) file = root+"/"+file;

@@ -4,8 +4,7 @@ const path = require("path");
 
 var listCheckJoinHTML = [
   ["addheadXemtua", "xemtua.com/HomePage.html" , "xemtua.com/AllShortVideoPage.html" , "xemtua.com/PlayerPage.html" , "xemtua.com/AllMangaPage.html"  , "xemtua.com/AllMoviePage.html" , "xemtua.com/AllAnimePage.html"],
-  ["addheadCuongOnePice", "EpPage.html", "HomePage.html", "SearchPage.html", "AllEpPage.html" , "AllMoviePage.html" , "AllShortVideoPage.html"],
-
+  ["addheadCuongOnePice", "cuongonepiece.com/EpPage.html", "cuongonepiece.com/HomePage.html", "cuongonepiece.com/SearchPage.html", "cuongonepiece.com/AllEpPage.html" , "cuongonepiece.com/AllMoviePage.html" , "cuongonepiece.com/AllShortVideoPage.html"],
 ];
 
 var preventFolder = [
@@ -14,7 +13,6 @@ var preventFolder = [
 
 //READ AND RETURN CLIENT
 module.exports = (res,req_bundle) => {
-        // console.log(req_bundle);
         // Read File
         fs.readFile(req_bundle.filePath, (err, content) => {
             if (err) {
@@ -39,18 +37,22 @@ module.exports = (res,req_bundle) => {
               //File join HTML
               if(req_bundle.contentType === "text/html"){
                 //check 
-                let check = false;
+                let checkfor = false;
                 let nameImplementFile;
                 for(let i = 0; i < listCheckJoinHTML.length ; i++){
+                  let check = false;
                   for(let j = 1 ; j < listCheckJoinHTML[i].length ; j++){
-                    if(req_bundle.filePath.indexOf(listCheckJoinHTML[i][j]) != -1) check = true;
+                    if((String(req_bundle.filePath)).includes(String(listCheckJoinHTML[i][j]))){
+                      check = true;
+                    } 
                   }
                   if(check === true){
+                    checkfor = true;
                     nameImplementFile = listCheckJoinHTML[i][0];
                   }
                 }
                 //respon
-                if(check === true){
+                if(checkfor === true){
                   const InResponseFile = require("./InResponseFile/"+nameImplementFile+".js");
                   InResponseFile(content,endResponsive);
                 }else{

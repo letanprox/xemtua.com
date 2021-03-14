@@ -17,5 +17,6 @@ module.exports = (root,method,url,returnRoute) => {
             url = '/' + list[i].file;
         }
     }
+
     return url;
 };
