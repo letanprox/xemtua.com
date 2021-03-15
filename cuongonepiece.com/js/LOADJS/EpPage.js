@@ -31,8 +31,6 @@ xhttp.onreadystatechange = function() {
             if(this.responseText !== "that bai"){
             if(iloadLink === false){
 
-                iloadLink = true;
-                clearInterval(intervaltime_);
                 var checklink = JSON.parse(this.responseText);
 
                 if(checklink.direct == "false"){
@@ -67,6 +65,9 @@ xhttp.onreadystatechange = function() {
                         priorlink = 1;
                     }
                 }
+
+                iloadLink = true;
+                clearInterval(intervaltime_);
             } 
             }else{
                 document.getElementById('LoadVideoEmbed').style.display = "none";
@@ -281,5 +282,6 @@ if(typeof GetUrlParameter('sotap') !== "undefined"){
 LoadCheckLink();
 
 intervaltime_ = setInterval(function(){ 
+    console.log("getlink")
     if(iloadLink === false) LoadCheckLink();
 }, 3000);
