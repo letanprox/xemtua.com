@@ -27,24 +27,52 @@ xhttp.onreadystatechange = function() {
         scrollBarList();
         hideLoadingVideo();
 
-        if(this.responseURL.includes("checkLinkBackup")){
+        if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhim") ){
             if(this.responseText !== "that bai"){
+
                 var checklink = JSON.parse(this.responseText);
-                if(checklink[1] == 0) document.getElementById('LoadVideoEmbed').style.display = "none";
-                if(checklink[0] == 0) document.getElementById('LoadVideoDirect').style.display = "none";
+
+                console.log(checklink)
+
+
+                if(checklink.direct == "false"){
+                    document.getElementById('LoadVideoDirect').style.display = "none";
+                }else{
+                    url_direct = checklink.direct.replace(/"/gi, "");
+                    if(priorlink == 0){
+                        document.getElementById('LoadVideoDirect').style.backgroundColor = "tomato";
+                        AppendVideoJwplayer(url_direct);
+                        priorlink = 1;
+                    }
+                }
+                
+                if(checklink.linkfb == "false"){
+                    document.getElementById('LoadVideoFB').style.display = "none";
+                }else{
+                    url_fb = checklink.linkfb.replace(/"/gi, "");
+                    if(priorlink == 0){ 
+                        document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
+                        AppendVideoJwplayer(url_fb);
+                        priorlink = 1;
+                    }
+                }
+
+                if(checklink.embed == "false"){
+                    document.getElementById('LoadVideoEmbed').style.display = "none";
+                }else{
+                    url_embed = checklink.embed.replace(/"/gi, "");
+                    if(priorlink == 0){
+                        document.getElementById('LoadVideoEmbed').style.backgroundColor = "tomato";
+                        AppendVideoEmbed(url_embed);
+                        priorlink = 1;
+                    }
+                }
+                
             }else{
                 document.getElementById('LoadVideoEmbed').style.display = "none";
                 document.getElementById('LoadVideoDirect').style.display = "none";
+                document.getElementById('LoadVideoFB').style.display = "none";
             }
-        }
-        if(this.responseURL.includes("loadVideoFB")){
-            AppendVideoFB(this.responseText.replace(/"/gi, ""));
-        }
-        if(this.responseURL.includes("loadVideoEmbed") || this.responseURL.includes("loadPhimEmbed")){
-            AppendVideoEmbed(this.responseText.replace(/"/gi, ""));
-        }
-        if(this.responseURL.includes("loadVideoDirect")){
-            AppendVideoDirect(this.responseText.replace(/"/gi, ""));
         }
     }
 };
@@ -207,47 +235,20 @@ function AppendOneComment(){
 //LOAD LINK-----------------------------------------------------------------
 function LoadCheckLink(){
     if(typeof GetUrlParameter('sotap') !== "undefined" || typeof GetUrlParameter('sophim') === "undefined"){
-        xhttp.open("GET", URLServer+"checkLinkBackup?sotap="+sotap , false);
+        xhttp.open("GET", URLServer+"checkLinkTap?sotap="+sotap , true);
         xhttp.send();
-    }else document.getElementById('LoadVideoDirect').style.display = "none";
+    }else{
+        xhttp.open("GET", URLServer+"checkLinkPhim?sophim="+sophim , true);
+        xhttp.send();
+    }
 }
 
-function LoadVideoFB(){
-    var url;
-    if(typeof GetUrlParameter('sotap') !== "undefined") url = URLServer+"loadVideoFB?sotap="+sotap; 
-    else url = URLServer+"loadVideoFB?sophim="+sophim;
-        xhttp.open("GET",url, true);
-        xhttp.send();
-}
-function AppendVideoFB(link){
-    document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
-    document.getElementById('LoadVideoEmbed').style.backgroundColor = "cornflowerblue";
-    document.getElementById('LoadVideoDirect').style.backgroundColor = "cornflowerblue";
-    jwplayer("play_video_jw").setup({ 
-        file: link,
-        image: "https://cuongonepiece.com/image/reddit/Imageplayer.jpg",
-        autostart: false,
-    });
-}
-
-function LoadVideoEmbed(){
-    var url;
-    if(typeof GetUrlParameter('sotap') !== "undefined") url = URLServer+"loadVideoEmbed?sotap="+sotap; 
-    else url = URLServer+"loadPhimEmbed?sophim="+sophim;
-        xhttp.open("GET",url, true);
-        xhttp.send();
-}
 function AppendVideoEmbed(link){
     $('#play_video_jw').empty();
     $('#play_video_jw').append('<div id="customiframe"></div>')
     $('#customiframe').append(decode_utf8(link));
 }
-
-function LoadVideoDirect(){
-    xhttp.open("GET",URLServer+"loadVideoDirect?sotap="+sotap, true);
-    xhttp.send();
-}
-function AppendVideoDirect(link){
+function AppendVideoJwplayer(link){
     $('#play_video_jw').empty();
     jwplayer("play_video_jw").setup({ 
         file: decode_utf8(link),
@@ -278,4 +279,3 @@ if(typeof GetUrlParameter('sotap') !== "undefined"){
 }
 
 LoadCheckLink();
-LoadVideoFB();

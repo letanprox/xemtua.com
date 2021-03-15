@@ -24,3 +24,8 @@ var ten_chat;
 var thoi_gian;
 
 var title_EpPage;
+
+var url_direct;
+var url_embed;
+var url_fb
+var priorlink = 0;

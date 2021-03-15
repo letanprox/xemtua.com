@@ -50,22 +50,22 @@ const listModel = [
 'xemtua.com/danhsachdrivelist',
 
 
+
 'cuongonepiece.com/danhsachtap',
 'cuongonepiece.com/danhsachphim',
 'cuongonepiece.com/danhsachchap',
 'cuongonepiece.com/danhsachmua',
 'cuongonepiece.com/danhsachbinhluan',
 'cuongonepiece.com/danhsachtokenfb',
-'cuongonepiece.com/danhsachurlfb',
+'cuongonepiece.com/danhsachurltapfb',
+'cuongonepiece.com/danhsachurlphimfb',
 'cuongonepiece.com/danhsachshortvideo',
 'cuongonepiece.com/danhsachurlshortvideo',
 'cuongonepiece.com/danhsachlinkshortvideo',
 'cuongonepiece.com/danhsachtokenshortvideo',
 'cuongonepiece.com/danhsachrelate',
-'cuongonepiece.com/danhsachvideoembed',
-'cuongonepiece.com/danhsachvideodirect',
-'cuongonepiece.com/danhsachphimembed',
-'cuongonepiece.com/danhsachphimdirect',
+'cuongonepiece.com/danhsachlinktap',
+'cuongonepiece.com/danhsachlinkphim',
 
 ]
 

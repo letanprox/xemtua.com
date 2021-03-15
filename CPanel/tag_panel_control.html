@@ -150,10 +150,15 @@ if(model === "phimtokenfb"){
     setURL("phimtokenfb","id_token",url.searchParams.get("id_token"));
 }
 
-if(model === "danhsachurlfb"){
+if(model === "danhsachurltapfb"){
     item = ['so_tap' , 'url' , 'thoi_gian'];
     stringlist = [1];
-    setURL("danhsachurlfb","x","x");
+    setURL("danhsachurltapfb","x","x");
+}
+if(model === "danhsachurlphimfb"){
+    item = ['so_phim' , 'url' , 'thoi_gian'];
+    stringlist = [1];
+    setURL("danhsachurlphimfb","x","x");
 }
 /////////////////////
 if(model === "danhsachtokenshortvideo"){
@@ -189,22 +194,16 @@ if(model === "celate"){
 }
 //////////////////////////
 
-if(model === "danhsachvideodirect"){
-    item = ['so_tap' , 'url' , 'thoi_gian'];
-    stringlist = [1];
-    setURL("danhsachvideodirect","x","x");
+if(model === "linhtap"){
+    item = [ 'so_tap' ,  'url_direct' , 'url_embed' , 'thoi_gian'  ];
+    setURL("linhtap" , "x" , "x");
 }
 
-if(model === "danhsachvideoembed"){
-    item = ['so_tap' , 'url' , 'thoi_gian'];
-    stringlist = [1];
-    setURL("danhsachvideoembed","x","x");
+if(model === "linhphim"){
+    item = [ 'so_phim' ,  'url_direct' , 'url_embed' , 'thoi_gian'  ];
+    setURL("linhphim" , "x" , "x");
 }
-if(model === "danhsachphimembed"){
-    item = ['so_phim' , 'url' , 'thoi_gian'];
-    stringlist = [1];
-    setURL("danhsachphimembed","x","x");
-}
+
 setInsert();
 
 document.getElementById("thoi_gian").value = getCurrentTime();

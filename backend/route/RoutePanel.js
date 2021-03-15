@@ -23,7 +23,8 @@ module.exports = (setroute = require("./Setroute")) => {
     Implement1("tokenfbs");
     Implement1("taptokenfb");
     Implement1("phimtokenfb");
-    Implement1("danhsachurlfb");
+    Implement1("danhsachurltapfb");
+    Implement1("danhsachurlphimfb");
 
     Implement1("danhsachtokenshortvideo");
     Implement1("danhsachurlshortvideo");
@@ -32,13 +33,8 @@ module.exports = (setroute = require("./Setroute")) => {
     Implement1("relate");
     Implement1("celate");
 
-    Implement1("danhsachvideodirect");
-    Implement1("danhsachvideoembed");
-    
-    Implement1("danhsachphimembed");
-    Implement1("danhsachphimdirect");
-
-
+    Implement1("linhtap");
+    Implement1("linhphim");
 
 
     let root_2 = "xemtua.com";

@@ -1,6 +1,5 @@
 module.exports = (setroute = require("./Setroute")) => {
 
-
     let root_1 = "cuongonepiece.com";
     
     setroute.pushRoute(root_1,"GET","api/tapmoi", "HomeController@tapmoi");
@@ -23,11 +22,8 @@ module.exports = (setroute = require("./Setroute")) => {
     setroute.pushRoute(root_1,"GET","api/relateshortvideo", "ShortVideoController@relateshortvideo");
     setroute.pushRoute(root_1,"GET","api/getoneshortvideo", "ShortVideoController@getoneshortvideo");
     
-    setroute.pushRoute(root_1,"GET","api/loadVideoEmbed", "PlayerContentController@loadVideoEmbed");
-    setroute.pushRoute(root_1,"GET","api/loadVideoDirect", "PlayerContentController@loadVideoDirect");
-    setroute.pushRoute(root_1,"GET","api/checkLinkBackup", "PlayerContentController@checkLinkBackup");
-    setroute.pushRoute(root_1,"GET","api/loadPhimEmbed", "PlayerContentController@loadPhimEmbed");
-
+    setroute.pushRoute(root_1,"GET","api/checkLinkTap", "PlayerContentController@checkLinkTap");
+    setroute.pushRoute(root_1,"GET","api/checkLinkPhim", "PlayerContentController@checkLinkPhim");
 
     let root_2 = "xemtua.com";
 
@@ -63,15 +59,6 @@ module.exports = (setroute = require("./Setroute")) => {
     setroute.pushRoute(root_2,"GET","api/checkLinkOva", "PlayerController@checkLinkOva");
 
     setroute.pushRoute(root_2,"GET","api/loadManga", "MangaController@loadManga");
-
-    // setroute.pushRoute(root_2,"GET","api/loadDirectPhimle", "LoadLinkPhimle@LoadDirect");
-    // setroute.pushRoute(root_2,"GET","api/loadEmbedPhimle", "LoadLinkPhimle@LoadEmbed");
-
-    // setroute.pushRoute(root_2,"GET","api/loadDirectTap", "LoadLinkTap@LoadDirect");
-    // setroute.pushRoute(root_2,"GET","api/loadEmbedTap", "LoadLinkTap@LoadEmbed");
-
-    // setroute.pushRoute(root_2,"GET","api/loadDirectOva", "LoadLinkOva@LoadDirect");
-    // setroute.pushRoute(root_2,"GET","api/loadEmbedOva", "LoadLinkOva@LoadEmbed");
 
     return setroute.getRoute();
 }

@@ -106,38 +106,29 @@ module.exports = async (callback, scanner) => {
         Implement('modelxcuongonepiece.com/danhsachtokenfb','phimtokenfb',false);
     }
 
-    if(index === 'danhsachurlfb'){
+    if(index === 'danhsachurltapfb'){
         keyquery   = [ 'so_tap' ];
         domain = [ 'url' , 'thoi_gian' ];
-        Implement('modelxcuongonepiece.com/danhsachurlfb','danhsachurlfb',true);
+        Implement('modelxcuongonepiece.com/danhsachurltapfb','danhsachurltapfb',true);
     }
 
+    if(index === 'danhsachurlphimfb'){
+        keyquery   = [ 'so_phim' ];
+        domain = [ 'url' , 'thoi_gian' ];
+        Implement('modelxcuongonepiece.com/danhsachurlphimfb','danhsachurlphimfb',true);
+    }
 ////////////////////////////////////////////////////
-    if(index.includes('danhsachvideodirect')){
-        keyquery =  ['so_tap'];
-        domain = [ 'url' , 'thoi_gian' ];
-        Implement('modelxcuongonepiece.com/danhsachvideodirect','danhsachvideodirect',true);
+    if(index === 'linhtap'){
+        keyquery   = [ 'so_tap'];
+        domain = [ 'url_direct' , 'url_embed' , 'thoi_gian' ];
+        Implement('modelxcuongonepiece.com/danhsachlinktap','linhtap',true);
     }
 
-    if(index.includes('danhsachvideoembed')){
-        keyquery =  ['so_tap'];
-        domain = [ 'url' , 'thoi_gian' ];
-        Implement('modelxcuongonepiece.com/danhsachvideoembed','danhsachvideoembed',true);
+    if(index === 'linhphim'){
+        keyquery   = [ 'so_phim'];
+        domain = [ 'url_direct' , 'url_embed' , 'thoi_gian' ];
+        Implement('modelxcuongonepiece.com/danhsachlinkphim','linhphim',true);
     }
-
-
-    if(index.includes('danhsachphimdirect')){
-        keyquery =  ['so_phim'];
-        domain = [ 'url' , 'thoi_gian' ];
-        Implement('modelxcuongonepiece.com/danhsachvideodirect','danhsachphimdirect',true);
-    }
-
-    if(index.includes('danhsachphimembed')){
-        keyquery =  ['so_phim'];
-        domain = [ 'url' , 'thoi_gian' ];
-        Implement('modelxcuongonepiece.com/danhsachphimembed','danhsachphimembed',true);
-    }
-
 
 //----------------------------------------------------
 

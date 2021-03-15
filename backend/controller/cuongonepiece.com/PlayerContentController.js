@@ -1,4 +1,6 @@
 let mongodb = require('mongodb');
+let LoadVideoTapFB = require("./LoadvideoTapFB.js");
+let LoadVideoPhimFB = require("./LoadvideoPhimFB.js");
 
 module.exports = async (callback, scanner) => {
     
@@ -161,189 +163,36 @@ module.exports = async (callback, scanner) => {
         }
     }
     //------------------------------------------------------------------------------------
-    let gettoken = async (id_token) => {
-        let query = {id_token:Number(id_token)}
-        let projection = {token: 1 ,  _id: 0,}
-        let sort = {}
-        let skip = 0;
-        let limit = 1;
-        token = await scanner["modelxcuongonepiece.com/danhsachtokenfb"].dataModel.select(query, projection, sort, skip, limit); 
-        return token[0]["token"]; 
-    }
-    let loadLinkVideoFB = (info_bundle,callback) => {
-        token = info_bundle["token"];
-        id_video = info_bundle["id_video"];
-        var data_array;
-        var url = 'https://graph.facebook.com/'+ id_video + '?access_token=' + token + '&fields=source';
-        const http      = require('http'),
-              https     = require('https');
-        let client = http;
-        if (url.toString().indexOf("https") === 0) {
-            client = https;
+    if (index === 'checkLinkTap') {
+        let model = scanner["modelxcuongonepiece.com/danhsachlinktap"];
+        let query = {so_tap: Number(head_params.get('sotap'))  }
+        let projection = {
+            _id: 0, so_tap: 0, thoi_gian:0
         }
-        var request = client.request(url, function (res) {
-            var data = '';
-                res.on('data', function (chunk) {
-                    data += chunk;
-                });
-                res.on('end', function () {
-                    data_array = JSON.parse(data);       
-                    callback(JSON.stringify(data_array.source), 'application/json');
-                    if(info_bundle["ishavetap"] === true){
-                        if(info_bundle["ishaveurl"] === 0){
-                            let myquery = [{so_tap : Number(info_bundle["so_tap"]) ,
-                                                url: data_array.source,
-                                                thoi_gian:getCurrentTime()
-                                            }];
-                            scanner["modelxcuongonepiece.com/danhsachurlfb"].dataModel.insert(myquery);
-                        }else{
-                            let myquery = {so_tap : Number(info_bundle["so_tap"])};
-                            let newvalues = { $set: {url:data_array.source, thoi_gian:getCurrentTime()} };
-                            scanner["modelxcuongonepiece.com/danhsachurlfb"].dataModel.update(myquery,newvalues);
-                        }
-                    }
-                });
-            });
-            request.on('error', function (e) {
-                callback(JSON.stringify("that bai"), 'application/json');
-            });
-            request.end();
-    }
-    if(index === "loadVideoFB"){
-        let clock = 60;
+        let select = await model.dataModel.select(query, projection, {}, 0, 0);
+        select = JSON.parse(JSON.stringify(select));
 
-        let so_tap = head_params.get('sotap');
-        let so_phim = head_params.get('sophim');
+        let linkfb = await LoadVideoTapFB( Number(head_params.get('sotap')) ,scanner);
+        if(linkfb === "that bai") linkfb = "false";
 
-        if((so_tap !== "undefined" && Number(so_tap) != 0) || ((so_phim !== "undefined") && Number(so_phim) != 0)){
-            let info_bundle = {};
-
-            if(so_tap !== "undefined" && Number(so_tap) != 0){
-
-                let select = await scanner["modelxcuongonepiece.com/danhsachtap"].dataModel.select({so_tap:Number(so_tap)}, { id_token_fb:1 , _id:0}, {}, 0,0);
-                if(Object.keys(select).length !== 0){
-
-                id_token = Number(select[0].id_token_fb);
-                info_bundle["ishavetap"] = true;
-                info_bundle["so_tap"] = so_tap;
-                info_bundle["ishaveurl"] = await scanner["modelxcuongonepiece.com/danhsachurlfb"].dataModel.count({so_tap: Number(so_tap)});
-                let dataday = await scanner["modelxcuongonepiece.com/danhsachurlfb"].dataModel.select({so_tap:Number(so_tap)}, {thoi_gian:1 , _id:0}, {}, 0, 0);
-
-                if(info_bundle["ishaveurl"] === 0 || Number(caculateDay(dataday[0].thoi_gian)) >= clock){
-                    query = {id_token:Number(id_token)}
-                    projection = {_id:0}
-                    projection["list_tap"] = {}
-                    projection["list_tap"]['$elemMatch'] = {}
-                    projection["list_tap"]['$elemMatch']['so_tap'] = Number(so_tap);
-                    id_video = await scanner["modelxcuongonepiece.com/danhsachtokenfb"].dataModel.search_(query, projection);
-                    info_bundle["token"] = await gettoken(id_token);
-                    if(Object.keys(id_video[0]).length === 0){
-                        callback(JSON.stringify("that bai"), 'application/json');
-                    }else{
-                        info_bundle["id_video"] = id_video[0]["list_tap"][0]["id_video_fb"];
-                        loadLinkVideoFB(info_bundle,callback);
-                    }
-                    console.log("ne");
-                }else{
-                    let url = await scanner["modelxcuongonepiece.com/danhsachurlfb"].dataModel.select({so_tap:Number(so_tap)}, {url:1 , _id:0}, {}, 0, 0);
-                    callback(JSON.stringify(decodeURI(url[0].url).replace(/0765547053/gi, "&")), 'application/json');
-                    console.log("re");
-                }
-                
-                }else{
-                    console.log("that bai")
-                    callback(JSON.stringify("that bai"), 'application/json');
-                }
-                
-            }else if(so_phim !== "undefined" && Number(so_phim) != 0){
-
-                let select = await scanner["modelxcuongonepiece.com/danhsachphim"].dataModel.select({so_phim:Number(so_phim)}, { id_token_fb:1 , _id:0}, {}, 0,0);
-                
-                if(Object.keys(select).length !== 0){
-                    id_token = Number(select[0].id_token_fb);
-                    info_bundle["ishavetap"] = false;
-                    info_bundle["so_phim"] = so_phim;
-                    query = {id_token:Number(id_token)}
-                    projection = {_id:0}
-                    projection["list_phim"] = {}
-                    projection["list_phim"]['$elemMatch'] = {}
-                    projection["list_phim"]['$elemMatch']['so_phim'] = Number(so_phim);
-                    id_video = await scanner["modelxcuongonepiece.com/danhsachtokenfb"].dataModel.search_(query, projection);
-                    info_bundle["token"] = await gettoken(id_token);
-                    if(Object.keys(id_video[0]).length === 0){
-                        callback(JSON.stringify("that bai"), 'application/json');
-                    }else{
-                        info_bundle["id_video"] = id_video[0]["list_phim"][0]["id_video_fb"];
-                        loadLinkVideoFB(info_bundle,callback);
-                    }
-                }else{
-                    console.log("that bai")
-                    callback(JSON.stringify("that bai"), 'application/json');
-                }
-            }
-        }else{
-            callback(JSON.stringify("that bai"), 'application/json');
-        }     
+        if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
+        else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
 
-    if(index === "loadVideoDirect"){
-        let so_tap = head_params.get('sotap');
-        if(so_tap !== "undefined" && Number(so_tap) !== 0){
-            let model = scanner["modelxcuongonepiece.com/danhsachvideodirect"];
-            let query = {so_tap: Number(so_tap)};
-            let projection = {url:1,_id:0}
-            let sort = {}
-            let skip = 0;
-            let limit = 1;
-            let select = await model.dataModel.select(query, projection, sort, skip, limit);
-            callback(JSON.stringify(select[0].url), 'application/json');
-        }else{
-            callback('that bai', 'application/json');
+    if (index === 'checkLinkPhim') {
+        let model = scanner["modelxcuongonepiece.com/danhsachlinkphim"];
+        let query = {so_phim: Number(head_params.get('sophim'))  }
+        let projection = {
+            _id: 0, so_phim: 0, thoi_gian:0
         }
-    }
+        let select = await model.dataModel.select(query, projection, {}, 0, 0);
+        select = JSON.parse(JSON.stringify(select));
 
-    if(index === "loadVideoEmbed"){
-        let so_tap = head_params.get('sotap');
-        if(so_tap !== "undefined" && Number(so_tap) !== 0){
-            let model = scanner["modelxcuongonepiece.com/danhsachvideoembed"];
-            let query = {so_tap: Number(so_tap)};
-            let projection = {url:1,_id:0}
-            let sort = {}
-            let skip = 0;
-            let limit = 1;
-            let select = await model.dataModel.select(query, projection, sort, skip, limit);
-            callback(JSON.stringify(select[0].url), 'application/json');
-        }else{
-            callback('that bai', 'application/json');
-        }
-    }
-    
-    if(index === "checkLinkBackup"){
-        let so_tap = head_params.get('sotap');
-        if(so_tap !== "undefined" && Number(so_tap) !== 0){
-            let data = [];
-            data[0] = await scanner["modelxcuongonepiece.com/danhsachvideodirect"].dataModel.count({so_tap: Number(so_tap)});
-            data[1] = await scanner["modelxcuongonepiece.com/danhsachvideoembed"].dataModel.count({so_tap: Number(so_tap)});
-            callback(JSON.stringify(data), 'application/json');
-        }else{
-            callback('that bai', 'application/json');
-        }
-    }
+        let linkfb = await LoadVideoPhimFB( Number(head_params.get('sophim')) ,scanner);
+        if(linkfb === "that bai") linkfb = "false";
 
-    if(index === "loadPhimEmbed"){
-        let so_phim = head_params.get('sophim');
-        if(so_phim !== "undefined" && Number(so_phim) !== 0){
-            let model = scanner["modelxcuongonepiece.com/danhsachphimembed"];
-            let query = {so_phim: Number(so_phim)};
-            let projection = {url:1,_id:0}
-            let sort = {}
-            let skip = 0;
-            let limit = 1;
-            let select = await model.dataModel.select(query, projection, sort, skip, limit);
-            callback(JSON.stringify(select[0].url), 'application/json');
-        }else{
-            callback('that bai', 'application/json');
-        }
+        if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
+        else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
 }
 

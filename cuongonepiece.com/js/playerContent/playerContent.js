@@ -100,19 +100,19 @@ function ClickPlayerContent (event) {
         document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
         document.getElementById('LoadVideoEmbed').style.backgroundColor = "cornflowerblue";
         document.getElementById('LoadVideoDirect').style.backgroundColor = "cornflowerblue";
-        LoadVideoFB();
+        AppendVideoJwplayer(url_fb);
     }else if(x.id === "LoadVideoDirect"){
         loadTransLink();
         document.getElementById('LoadVideoFB').style.backgroundColor = "cornflowerblue";
         document.getElementById('LoadVideoEmbed').style.backgroundColor = "cornflowerblue";
         document.getElementById('LoadVideoDirect').style.backgroundColor = "tomato";
-        LoadVideoDirect();
+        AppendVideoJwplayer(url_direct);
     }else if(x.id === "LoadVideoEmbed"){
         loadTransLink();
         document.getElementById('LoadVideoFB').style.backgroundColor = "cornflowerblue";
         document.getElementById('LoadVideoEmbed').style.backgroundColor = "tomato";
         document.getElementById('LoadVideoDirect').style.backgroundColor = "cornflowerblue";
-        LoadVideoEmbed();
+        AppendVideoEmbed(url_embed);
     }else{
         hideSeasonList();
     }
