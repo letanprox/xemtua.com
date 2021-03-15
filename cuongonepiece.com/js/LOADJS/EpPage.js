@@ -30,10 +30,8 @@ xhttp.onreadystatechange = function() {
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhim") ){
             if(this.responseText !== "that bai"){
 
+                iloadLink = true;
                 var checklink = JSON.parse(this.responseText);
-
-                console.log(checklink)
-
 
                 if(checklink.direct == "false"){
                     document.getElementById('LoadVideoDirect').style.display = "none";
@@ -279,3 +277,7 @@ if(typeof GetUrlParameter('sotap') !== "undefined"){
 }
 
 LoadCheckLink();
+
+setTimeout(function(){ 
+    if(iloadLink === false) LoadCheckLink();
+}, 5000);

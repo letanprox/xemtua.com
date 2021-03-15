@@ -29,3 +29,5 @@ var url_direct;
 var url_embed;
 var url_fb
 var priorlink = 0;
+
+var iloadLink = false;

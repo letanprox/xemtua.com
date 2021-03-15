@@ -163,6 +163,7 @@ module.exports = async (callback, scanner) => {
         }
     }
     //------------------------------------------------------------------------------------
+
     if (index === 'checkLinkTap') {
         let model = scanner["modelxcuongonepiece.com/danhsachlinktap"];
         let query = {so_tap: Number(head_params.get('sotap'))  }
@@ -179,6 +180,7 @@ module.exports = async (callback, scanner) => {
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
 
+
     if (index === 'checkLinkPhim') {
         let model = scanner["modelxcuongonepiece.com/danhsachlinkphim"];
         let query = {so_phim: Number(head_params.get('sophim'))  }
@@ -194,6 +196,7 @@ module.exports = async (callback, scanner) => {
         if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
+
 }
 
 let caculateDay = (day)=>{
