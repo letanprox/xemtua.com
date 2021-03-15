@@ -32,6 +32,7 @@ xhttp.onreadystatechange = function() {
             if(iloadLink === false){
 
                 iloadLink = true;
+                clearInterval(intervaltime_);
                 var checklink = JSON.parse(this.responseText);
 
                 if(checklink.direct == "false"){
@@ -279,6 +280,6 @@ if(typeof GetUrlParameter('sotap') !== "undefined"){
 
 LoadCheckLink();
 
-setInterval(function(){ 
+intervaltime_ = setInterval(function(){ 
     if(iloadLink === false) LoadCheckLink();
 }, 3000);
