@@ -11,7 +11,7 @@ module.exports =  (req,returnRoute) => {
   
 
     if(req.headers.host === "localhost") req.headers.host = "www.cuongonepiece.com";
-    if(String(req.headers.host).includes("45.32.250.198")){ req.headers.host = "www.xemtua.com";}
+    if(String(req.headers.host).includes("45.32.250.198")){ req.headers.host = "www.cuongonepiece.com";}
     if(String(req.headers.host).includes("xemtua")){ req.headers.host = "www.xemtua.com";}
     if(String(req.headers.host).includes("cuongonepiece")){ req.headers.host = "www.cuongonepiece.com";}
 
