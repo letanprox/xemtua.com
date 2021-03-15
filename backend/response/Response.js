@@ -1,4 +1,4 @@
-let url = require('url');
+let URL = require('url').URL;
 
 module.exports = async (scanner) => {
 
