@@ -30,7 +30,7 @@ xhttp.onreadystatechange = function() {
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhim") ){
             if(this.responseText !== "that bai"){
             if(iloadLink === false){
-                
+
                 iloadLink = true;
                 var checklink = JSON.parse(this.responseText);
 
@@ -279,6 +279,6 @@ if(typeof GetUrlParameter('sotap') !== "undefined"){
 
 LoadCheckLink();
 
-setTimeout(function(){ 
+setInterval(function(){ 
     if(iloadLink === false) LoadCheckLink();
-}, 5000);
+}, 3000);
