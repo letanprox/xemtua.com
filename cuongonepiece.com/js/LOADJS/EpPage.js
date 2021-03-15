@@ -29,7 +29,8 @@ xhttp.onreadystatechange = function() {
 
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhim") ){
             if(this.responseText !== "that bai"){
-
+            if(iloadLink === false){
+                
                 iloadLink = true;
                 var checklink = JSON.parse(this.responseText);
 
@@ -65,7 +66,7 @@ xhttp.onreadystatechange = function() {
                         priorlink = 1;
                     }
                 }
-                
+            } 
             }else{
                 document.getElementById('LoadVideoEmbed').style.display = "none";
                 document.getElementById('LoadVideoDirect').style.display = "none";
