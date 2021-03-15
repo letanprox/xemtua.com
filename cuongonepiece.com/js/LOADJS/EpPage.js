@@ -30,7 +30,6 @@ xhttp.onreadystatechange = function() {
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhim") ){
             if(this.responseText !== "that bai"){
             if(iloadLink === false){
-
                 var checklink = JSON.parse(this.responseText);
 
                 if(checklink.direct == "false"){
