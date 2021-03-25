@@ -106,7 +106,7 @@ module.exports = async (callback, scanner) => {
 
 
         if(id_facebook !== "undefined" && ten_chat !== "undefined" && noi_dung !== "undefined" && thoi_gian !== "undefined"){
-            if(id_facebook !== "script" && ten_chat !== "script" && noi_dung !== "script" && thoi_gian !== "script"){
+            if(id_facebook.includes("script") && ten_chat.includes("script") && noi_dung.includes("script") && thoi_gian.includes("script")){
 
             }else{
                 check = false;
