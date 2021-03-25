@@ -102,15 +102,21 @@ module.exports = async (callback, scanner) => {
         let ten_chat = String(head_params.get('ten_chat'));
         let noi_dung = String(head_params.get('noi_dung'));
         let thoi_gian = String(head_params.get('thoi_gian'));
+        let notscipt = ['scipt' , 'html' , '</' , '<div' , '<button' , '<scipt' , '<link']
         let check = true;
 
 
         if(id_facebook !== "undefined" && ten_chat !== "undefined" && noi_dung !== "undefined" && thoi_gian !== "undefined"){
-            if(id_facebook.includes("script") && ten_chat.includes("script") && noi_dung.includes("script") && thoi_gian.includes("script")){
 
-            }else{
-                check = false;
+
+            for(let i = 0; i < notscipt.length; i++){
+                if(id_facebook.includes(notscipt[i])) check = false;
+                if(ten_chat.includes(notscipt[i])) check = false;
+                if(noi_dung.includes(notscipt[i])) check = false;
+                if(thoi_gian.includes(notscipt[i])) check = false;
             }
+
+
         }else{
             check = false;
         }
