@@ -10,9 +10,9 @@ function OneItem(myObj){
     return element;
 }
 
-let URL_COUNT = "/jpanel/"+url_count+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;  // return number
-let URL_DELETE = "/jpanel/"+url_delete+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_+"&"+item[0]+"=";   //return thanh cong
-let URL_POST = "/jpanel/"+url_getlist+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;  //return json
+let URL_COUNT = "/cpanel/"+url_count+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;  // return number
+let URL_DELETE = "/cpanel/"+url_delete+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_+"&"+item[0]+"=";   //return thanh cong
+let URL_POST = "/cpanel/"+url_getlist+"?"+value_group+"="+value_group_+"&"+value_group1+"="+value_group1_;  //return json
 
 
 let check = -1;
