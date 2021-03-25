@@ -3,6 +3,7 @@ module.exports = (setroute = require("./Setroute")) => {
     let root_1 = "cuongonepiece.com";
 
     setroute.pushRoute(root_1,"GET","tag_panel_control", "CPanel/tag_panel_control.html");
+    setroute.pushRoute(root_1,"GET","tag_panel_view", "CPanel/tag_panel_view.html");
 
     setroute.pushRoute(root_1,"GET","", "HomePage.html");
     setroute.pushRoute(root_1,"GET","search", "SearchPage.html");
