@@ -98,11 +98,25 @@ module.exports = async (callback, scanner) => {
     //------------------------------------------------------------------------------------
     if (index === 'insertComment') {
         //INSERT COMMENT
-        let id_facebook = head_params.get('id_facebook');
-        let ten_chat = head_params.get('ten_chat');
-        let noi_dung = head_params.get('noi_dung');
-        let thoi_gian = head_params.get('thoi_gian');
+        let id_facebook = String(head_params.get('id_facebook'));
+        let ten_chat = String(head_params.get('ten_chat'));
+        let noi_dung = String(head_params.get('noi_dung'));
+        let thoi_gian = String(head_params.get('thoi_gian'));
+        let check = true;
+
+
         if(id_facebook !== "undefined" && ten_chat !== "undefined" && noi_dung !== "undefined" && thoi_gian !== "undefined"){
+            if(id_facebook !== "script" && ten_chat !== "script" && noi_dung !== "script" && thoi_gian !== "script"){
+
+            }else{
+                check = false;
+            }
+        }else{
+            check = false;
+        }
+        
+        
+        if(check == true){
             try {
                 query = [{
                     id_facebook:id_facebook,
