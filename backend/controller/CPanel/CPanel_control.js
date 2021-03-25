@@ -18,8 +18,6 @@ module.exports = async (callback, scanner) => {
     let groupquery  = [];
     let keybat = [];
 
-    console.log(index)
-
     function Implement(x,y,z){
         scanner.modelx =  scanner[x];
         scanner.req_bundle.index = (scanner.req_bundle.index).replace(y+'_', '');
