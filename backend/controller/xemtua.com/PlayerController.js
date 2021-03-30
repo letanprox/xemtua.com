@@ -236,13 +236,33 @@ module.exports = async (callback, scanner) => {
     //------------------------------------------------------------------------------------
     if (index === 'insertComment') {
         //INSERT COMMENT
-        let sophim =    Number(head_params.get('sophim'));
+        let sophim = Number(head_params.get('sophim'));
 
-        let id_facebook = head_params.get('id_facebook');
-        let ten_chat = head_params.get('ten_chat');
-        let noi_dung = head_params.get('noi_dung');
-        let thoi_gian = getCurrentTime();
+        let id_facebook = String(head_params.get('id_facebook'));
+        let ten_chat = String(head_params.get('ten_chat'));
+        let noi_dung = String(head_params.get('noi_dung'));
+        let thoi_gian = String(head_params.get('thoi_gian'));
+        let notscipt = ['scipt' , 'html' , '</' , '<div' , '<button' , '<scipt' , '<link']
+        let check = true;
+
+
         if(id_facebook !== "undefined" && ten_chat !== "undefined" && noi_dung !== "undefined" && thoi_gian !== "undefined"){
+
+
+            for(let i = 0; i < notscipt.length; i++){
+                if(id_facebook.includes(notscipt[i])) check = false;
+                if(ten_chat.includes(notscipt[i])) check = false;
+                if(noi_dung.includes(notscipt[i])) check = false;
+                if(thoi_gian.includes(notscipt[i])) check = false;
+            }
+
+
+        }else{
+            check = false;
+        }
+
+        
+        if(check == true){
             try {
                 query = [{
                     so_phim: sophim,
