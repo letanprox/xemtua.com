@@ -1,0 +1,165 @@
+for (( c=162; c<=166; c++ ))
+do  
+ffmpeg -i  $c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 19  -hls_list_size 0 -f hls m3u8/black_clover_tap_$c/black_clover_tap_$c_.m3u8
+done
+
+
+for (( c=181; c<=184; c++ ))
+do  
+ffmpeg -i  $c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 19  -hls_list_size 0 -f hls m3u8/boruto_tap_$c/boruto_tap_$c_.m3u8
+done
+
+
+for ((c=151; c<=169; c++))
+do  
+	mkdir blackclover_tap${c}_
+done
+
+for ((c=151; c<=169; c++))
+do  
+ffmpeg -i  Blackclover/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls Blackcloverm3u8/blackclover_tap${c}_/blackclover_tap${c}_.m3u8
+done
+
+
+
+for ((c=72; c<=75; c++))
+do  
+	mkdir aot_tap${c}_
+done
+
+mkdir aot_tap13.5_
+
+for ((c=72; c<=75; c++))
+do  
+ffmpeg -i  AOT/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls AOTm3u8/aot_tap${c}_/aot_tap${c}_.m3u8
+done
+
+
+
+for ((c=1; c<=2; c++))
+do  
+	mkdir acttackontitanxova${c}_
+done
+
+
+for ((c=1; c<=2; c++))
+do  
+	ffmpeg -i  AOT/ova${c}.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls AOTm3u8/acttackontitanxova${c}_/acttackontitanxova${c}_.m3u8
+done
+
+ffmpeg -i  AOT/ova1.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls AOTm3u8/acttackontitanxova1_/acttackontitanxova1_.m3u8
+ffmpeg -i  AOT/ova2.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls AOTm3u8/acttackontitanxova2_/acttackontitanxova2_.m3u8
+
+
+
+for ((c=1; c<=26; c++))
+do  
+	mkdir kit_tap${c}_
+done
+
+for ((c=1; c<=26; c++))
+do  
+ffmpeg -i  Kit/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls Kitm3u8/kit_tap${c}_/kit_tap${c}_.m3u8
+done
+
+
+
+
+for ((c=19; c<=24; c++))
+do  
+	mkdir jujutsu_tap${c}_
+done
+
+for ((c=19; c<=24; c++))
+do  
+ffmpeg -i  Ju/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls Jum3u8/jujutsu_tap${c}_/jujutsu_tap${c}_.m3u8
+done
+
+
+mkdir MOTENSEIm3u8
+
+for ((c=1; c<=11; c++))
+do  
+	mkdir mokushotensei_tap${c}_
+done
+
+for ((c=1; c<=11; c++))
+do  
+ffmpeg -i  MOTENSEI/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls MOTENSEIm3u8/mokushotensei_tap${c}_/mokushotensei_tap${c}_.m3u8
+done
+
+
+
+ffmpeg -i  Boruto_con_trai_ngo_nghich.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls BorutoNarutoTheMovie_/BorutoNarutoTheMovie_.m3u8
+
+
+BORUTO: NARUTO THE MOVIE
+///////////////////////////////////
+for (( c=579; c<=700; c++ ))
+do  
+      scp  Folder/onepiece_tap${c}_.m3u8  root@45.32.250.198:/apache2/server/m3u8onepiece/ 
+done
+
+for (( c=579; c<=600; c++ ))
+do
+      cp  /home/letan/Desktop/700820/onepiece600/onepiece_tap${c}_/onepiece_tap${c}_.m3u8    /apache2/codeDrive/Folder
+done
+/////////////////////////////////
+for (( c=801; c<=850; c++ ))
+do  
+      scp root@172.104.171.11:/apache2/upload/onepiece_tap${c}_/onepiece_tap${c}_.m3u8    /apache2/codeDrive/Folder
+done
+
+for (( c=801; c<=850; c++ ))
+do  
+      cp  /apache2/upload/onepiece_tap${c}_/onepiece_tap${c}_.m3u8    /apache2/onepiece850m3u8
+done
+
+
+for (( c=260; c<=293 ; c++ ))
+do  
+      scp  /home/letan/Desktop/reddit/${c}.jpg    root@45.32.250.198:/apache2/server/image/reddit/
+done
+
+
+for (( c=701; c<=750; c++ ))
+do  
+      cp  onepiece750/${c}.mp4    onepiece850/${c}.mp4 
+done
+
+
+for (( c=151; c<=189; c++ ))
+do  
+      sudo mv  Boruto/boruto_tap${c}_    upload/ 
+done
+
+for (( c=36; c<=40; c++ ))
+do  
+      sudo mv  AOTm3u8/aot_tap${c}_    upload/ 
+done
+
+
+for (( c=36; c<=40; c++ ))
+do  
+      sudo mv  upload/aot_tap${c}_     AOTm3u8/  
+done
+
+
+for (( c=1; c<=26; c++ ))
+do  
+      sudo mv  Kitm3u8/kit_tap${c}_    upload/  
+done
+
+
+
+
+for (( c=800; c<=950; c++ ))
+do  
+      rm -r  onepiece_tap${c}_
+done
+
+
+for (( c=801; c<=850; c++ ))
+do  
+      cp -r m3u8/onepiece_tap${c}_   onepiece750m3u8/
+done
