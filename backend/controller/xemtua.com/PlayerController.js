@@ -248,7 +248,6 @@ module.exports = async (callback, scanner) => {
 
         if(id_facebook !== "undefined" && ten_chat !== "undefined" && noi_dung !== "undefined" && thoi_gian !== "undefined"){
 
-
             for(let i = 0; i < notscipt.length; i++){
                 if(id_facebook.includes(notscipt[i])) check = false;
                 if(ten_chat.includes(notscipt[i])) check = false;
@@ -256,12 +255,10 @@ module.exports = async (callback, scanner) => {
                 if(thoi_gian.includes(notscipt[i])) check = false;
             }
 
-
         }else{
             check = false;
         }
 
-        
         if(check == true){
             try {
                 query = [{
