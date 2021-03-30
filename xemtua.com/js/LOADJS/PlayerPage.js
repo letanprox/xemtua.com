@@ -42,7 +42,11 @@ xhttp.onreadystatechange = function() {
             isloaded_ep = true;
             scrollBarList();
             hideLoadingVideo(); 
-            loadCheckLink();
+
+            intervaltime_ = setInterval(function(){ 
+                console.log("getlink")
+                if(iloadLink === false) loadCheckLink();
+            }, 3000);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadSeason")){
@@ -87,7 +91,11 @@ xhttp.onreadystatechange = function() {
             isloaded_movie = true;
             scrollBarList();
             hideLoadingVideo(); 
-            loadCheckLink();
+
+            intervaltime_ = setInterval(function(){ 
+                console.log("getlink")
+                if(iloadLink === false) loadCheckLink();
+            }, 3000);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadPlayerOva")){
@@ -123,7 +131,11 @@ xhttp.onreadystatechange = function() {
             isloaded_ova = true;
             scrollBarList();
             hideLoadingVideo(); 
-            loadCheckLink();
+
+            intervaltime_ = setInterval(function(){ 
+                console.log("getlink")
+                if(iloadLink === false) loadCheckLink();
+            }, 3000);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadListEp")){
@@ -178,18 +190,9 @@ xhttp.onreadystatechange = function() {
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhimle") || this.responseURL.includes("checkLinkOva")){
        
             if(this.responseText !== "that bai"){
+
                 var checklink = JSON.parse(this.responseText);
 
-                if(checklink.linkfb == "false"){
-                    document.getElementById('LoadVideoFB').style.display = "none";
-                }else{
-                    url_fb = checklink.linkfb.replace(/"/gi, "");
-                    if(priorlink == 0){ 
-                        document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
-                        AppendVideoJwplayer(url_fb);
-                        priorlink = 1;
-                    }
-                }
 
                 if(checklink.direct == "false"){
                     document.getElementById('LoadVideoDirect').style.display = "none";
@@ -198,6 +201,18 @@ xhttp.onreadystatechange = function() {
                     if(priorlink == 0){
                         document.getElementById('LoadVideoDirect').style.backgroundColor = "tomato";
                         AppendVideoJwplayer(url_direct);
+                        priorlink = 1;
+                    }
+                }
+
+
+                if(checklink.linkfb == "false"){
+                    document.getElementById('LoadVideoFB').style.display = "none";
+                }else{
+                    url_fb = checklink.linkfb.replace(/"/gi, "");
+                    if(priorlink == 0){ 
+                        document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
+                        AppendVideoJwplayer(url_fb);
                         priorlink = 1;
                     }
                 }
@@ -214,7 +229,8 @@ xhttp.onreadystatechange = function() {
                     }
                 }
                 
-                
+                iloadLink = true;
+                clearInterval(intervaltime_);
             }else{
                 document.getElementById('LoadVideoEmbed').style.display = "none";
                 document.getElementById('LoadVideoDirect').style.display = "none";

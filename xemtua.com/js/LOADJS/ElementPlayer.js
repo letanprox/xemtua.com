@@ -48,3 +48,6 @@ if(window.location.href.split("/")[3] === 'episode'){
 }
 
 var tukhoaphim = String(window.location.href.split("/")[4]);
+
+var iloadLink = false;
+var intervaltime_;
