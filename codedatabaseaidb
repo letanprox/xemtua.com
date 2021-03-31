@@ -20,5 +20,8 @@ mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_tap -
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_tokenshortvideo --type json --out  danhsachtokenshortvideo.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_truyen --type json --out  danhsachtruyen.json
 
+mongoimport --db aidb  --collection  danh_sach_driveapi  --file danhsachdriveapi.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_driveapi --type json --out  danhsachdriveapi.json
+
 mongoimport --db aidb  --collection  danh_sach_linktap --file danhsachlinktap.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linktap --type json --out  danhsachlinktap.json

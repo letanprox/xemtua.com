@@ -51,6 +51,11 @@ ffmpeg -i  AOT/ova1.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number
 ffmpeg -i  AOT/ova2.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls AOTm3u8/acttackontitanxova2_/acttackontitanxova2_.m3u8
 
 
+ffmpeg -i  filmstampedeonepiece.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls filmstampedeonepiecem3u8/filmstampedeonepiece_.m3u8
+ffmpeg -i  filmzonepiece.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls filmzonepiecem3u8/filmzonepiece_.m3u8
+ffmpeg -i  yournamemovie.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls yournamemoviem3u8/yournamemovie_.m3u8
+
+
 
 for ((c=1; c<=26; c++))
 do  

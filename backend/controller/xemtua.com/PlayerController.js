@@ -103,7 +103,7 @@ module.exports = async (callback, scanner) => {
 
             projection = {tu_khoa:1 , _id:0}
             bundle.tu_khoa_phim = await scanner["modelxxemtua.com/danhsachphim"].dataModel.select(query, projection, {}, 0, 0);
-            bundle.tu_khoa_phim = bundle.tu_khoa_phim[0].tu_khoa;
+            if(bundle.tu_khoa_phim.length !== 0) bundle.tu_khoa_phim = bundle.tu_khoa_phim[0].tu_khoa;
             
             await scanner["modelxxemtua.com/danhsachphimle"].dataModel.update({so_phimle: bundle.so_phimle , so_phim: bundle.so_phim}, {$inc:{luot_xem: 1}});
 
