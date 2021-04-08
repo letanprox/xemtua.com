@@ -166,7 +166,7 @@ module.exports = async (callback, scanner) => {
         query = {so_mua: somua , so_phim: sophim}
         projection = {so_phim:0 , so_mua:0 ,  id_token_fb:0 , _id:0}
         //bundle
-        let select = await scanner["modelxxemtua.com/danhsachtap"].dataModel.select(query, projection, {}, 0, 0);
+        let select = await scanner["modelxxemtua.com/danhsachtap"].dataModel.select(query, projection, {so_tap: 1}, 0, 0);
         callback(JSON.stringify(select), 'application/json');
     }
 
