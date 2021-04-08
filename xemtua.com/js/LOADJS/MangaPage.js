@@ -59,7 +59,7 @@ function loadElementChap(data){
     elements = '';
     for(var i = 0; i < datachap.length ; i++){
         console.log(datachap[i].url_anh)
-        if(datachap[i].anh_ngang === "true"){
+        if(datachap[i].anh_ngang === true){
             elements = elements + '<img class="width_manga" src="'+decode_utf8(datachap[i].url_anh)+'" alt="" srcset=""></img>'
         }else{
             elements = elements + '<img class="height_manga" src="'+decode_utf8(datachap[i].url_anh)+'" alt="" srcset=""></img>'
