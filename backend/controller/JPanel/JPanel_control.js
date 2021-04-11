@@ -29,7 +29,7 @@ module.exports = async (callback, scanner) => {
     if(index.includes('danhsachtokenshortvideo')){
         keyquery = ['id_token'];
         domain = ['token'];
-        Implement('modelxxemtua.com/modelxdanhsachtokenshortvideo','danhsachtokenshortvideo',true);
+        Implement('modelxxemtua.com/danhsachtokenshortvideo','danhsachtokenshortvideo',true);
     }
 
     if(index.includes('danhsachurlshortvideo')){
