@@ -26,7 +26,7 @@ document.getElementById("search_bar").addEventListener("keyup", function(event) 
             location.replace("/video?index="+document.getElementById('search_bar').value);
         }else{
             event.preventDefault();
-            window.open("https://www.google.com/search?q=site:xemtua.xyz " + document.getElementById('search_bar').value + "",'_blank');
+            window.open("https://www.google.com/search?q=site:xemtua.com " + document.getElementById('search_bar').value + "",'_blank');
         }
     }
 });
