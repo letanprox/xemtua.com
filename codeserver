@@ -103,7 +103,7 @@ BORUTO: NARUTO THE MOVIE
 for (( c=579; c<=700; c++ ))
 do  
       scp  Folder/onepiece_tap${c}_.m3u8  root@45.32.250.198:/apache2/server/m3u8onepiece/ 
-done
+donedb.danh_sach_tap.createIndex( { ten_tap: "text" } )
 
 for (( c=579; c<=600; c++ ))
 do
@@ -168,3 +168,14 @@ for (( c=801; c<=850; c++ ))
 do  
       cp -r m3u8/onepiece_tap${c}_   onepiece750m3u8/
 done
+
+
+db.danh_sach_tap.createIndex( { ten_tap: "text" } )
+
+ db.createUser(
+   {
+     user: "tan",
+     pwd: "12345",
+     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+   }
+ )
