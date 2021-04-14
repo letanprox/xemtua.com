@@ -72,6 +72,14 @@ const listModel = [
 //SCANNER
 const scanner = {};
 
+//IP
+const parseIp = (req) =>
+    (typeof req.headers['x-forwarded-for'] === 'string'
+        && req.headers['x-forwarded-for'].split(',').shift())
+    || req.connection?.remoteAddress
+    || req.socket?.remoteAddress
+    || req.connection?.socket?.remoteAddress
+
 //CREATE SERVER
 let SERVER = async (db) => {
     for(let i = 0; i < listModel.length; i++){
@@ -79,16 +87,6 @@ let SERVER = async (db) => {
         scanner['modelx'+listModel[i]] = await fx(db);
     }
     http.createServer((req, res) => {
-
-
-        const parseIp = (req) =>
-        (typeof req.headers['x-forwarded-for'] === 'string'
-            && req.headers['x-forwarded-for'].split(',').shift())
-        || req.connection?.remoteAddress
-        || req.socket?.remoteAddress
-        || req.connection?.socket?.remoteAddress
-
-         console.log(parseIp(req))
         
             scanner.req = req;
             scanner.res = res;
@@ -97,6 +95,8 @@ let SERVER = async (db) => {
             else if((req.url).includes("panel")) scanner.req_bundle = reqUest(req,routepanel);
             else scanner.req_bundle = reqUest(req,routeother);
         
+            if(scanner.req_bundle.contentType === "text/html") console.log(parseIp(req))
+
             if (scanner.req_bundle.status == 1) responseFile(scanner.res, scanner.req_bundle);
             else resPonse(scanner);
             
