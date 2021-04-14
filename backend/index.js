@@ -79,6 +79,16 @@ let SERVER = async (db) => {
         scanner['modelx'+listModel[i]] = await fx(db);
     }
     http.createServer((req, res) => {
+
+
+        const parseIp = (req) =>
+        (typeof req.headers['x-forwarded-for'] === 'string'
+            && req.headers['x-forwarded-for'].split(',').shift())
+        || req.connection?.remoteAddress
+        || req.socket?.remoteAddress
+        || req.connection?.socket?.remoteAddress
+
+         console.log(parseIp(req))
         
             scanner.req = req;
             scanner.res = res;
