@@ -1,24 +1,38 @@
+mongoimport --db aidb  --collection  danh_sach_binhluan --file danhsachbinhluan.json
 mongoimport --db aidb  --collection  danh_sach_chap --file danhsachchap.json
 mongoimport --db aidb  --collection  danh_sach_idtokenfb --file danhsachidtokenfb.json
+mongoimport --db aidb  --collection  danh_sach_linkova --file danhsachlinkova.json
+mongoimport --db aidb  --collection  danh_sach_linkphimle. --file danhsachlinkphimle.json
+mongoimport --db aidb  --collection  danh_sach_linktap. --file danhsachlinktap.json
 mongoimport --db aidb  --collection  danh_sach_linkshortvideo --file danhsachlinkshortvideo.json
 mongoimport --db aidb  --collection  danh_sach_mua --file danhsachmua.json
+mongoimport --db aidb  --collection  danh_sach_ova --file danhsachova.json
 mongoimport --db aidb  --collection  danh_sach_phim --file danhsachphim.json
+mongoimport --db aidb  --collection  danh_sach_phimle --file danhsachphimle.json
 mongoimport --db aidb  --collection  danh_sach_relate --file danhsachrelate.json
 mongoimport --db aidb  --collection  danh_sach_shortvideo --file danhsachshortvideo.json
 mongoimport --db aidb  --collection  danh_sach_tap --file danhsachtap.json
 mongoimport --db aidb  --collection  danh_sach_tokenshortvideo --file danhsachtokenshortvideo.json
 mongoimport --db aidb  --collection  danh_sach_truyen --file danhsachtruyen.json
 
+
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_binhluan --type json --out  danhsachbinhluan.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_chap --type json --out  danhsachchap.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_idtokenfb --type json --out  danhsachidtokenfb.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linkova --type json --out  danhsachlinkova.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linkphimle --type json --out  danhsachlinkphimle.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linktap--type json --out  danhsachlinktap.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linkshortvideo --type json --out  danhsachlinkshortvideo.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_mua --type json --out  danhsachmua.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_ova --type json --out  danhsachova.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_phim --type json --out  danhsachphim.json
+mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_phimle --type json --out  danhsachphimle.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_relate --type json --out  danhsachrelate.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_shortvideo --type json --out  danhsachshortvideo.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_tap --type json --out  danhsachtap.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_tokenshortvideo --type json --out  danhsachtokenshortvideo.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_truyen --type json --out  danhsachtruyen.json
+
 
 mongoimport --db aidb  --collection  danh_sach_driveapi  --file danhsachdriveapi.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_driveapi --type json --out  danhsachdriveapi.json
