@@ -61,7 +61,6 @@ module.exports = async (sophim, sophimle, scanner) => {
                     }else{
                         info_bundle["token"] = select[0].token;
                         info_bundle["id_video"] = select[0]["phimletoken"][0]["id_video_fb"];
-                        console.log("xxxxx")
                         return await loadLinkVideoFB(info_bundle,scanner);
                     }
                 }else{
