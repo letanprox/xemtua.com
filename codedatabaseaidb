@@ -2,8 +2,8 @@ mongoimport --db aidb  --collection  danh_sach_binhluan --file danhsachbinhluan.
 mongoimport --db aidb  --collection  danh_sach_chap --file danhsachchap.json
 mongoimport --db aidb  --collection  danh_sach_idtokenfb --file danhsachidtokenfb.json
 mongoimport --db aidb  --collection  danh_sach_linkova --file danhsachlinkova.json
-mongoimport --db aidb  --collection  danh_sach_linkphimle. --file danhsachlinkphimle.json
-mongoimport --db aidb  --collection  danh_sach_linktap. --file danhsachlinktap.json
+mongoimport --db aidb  --collection  danh_sach_linkphimle --file danhsachlinkphimle.json
+mongoimport --db aidb  --collection  danh_sach_linktap --file danhsachlinktap.json
 mongoimport --db aidb  --collection  danh_sach_linkshortvideo --file danhsachlinkshortvideo.json
 mongoimport --db aidb  --collection  danh_sach_mua --file danhsachmua.json
 mongoimport --db aidb  --collection  danh_sach_ova --file danhsachova.json
