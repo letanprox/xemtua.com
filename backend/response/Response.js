@@ -6,8 +6,15 @@ module.exports = async (scanner) => {
             if(scanner.req_bundle.filePath != ''){
             Controller = require("../controller" + scanner.req_bundle.filePath);
             Controller(function(result, ContentType) {
-                scanner.res.writeHead(200, { "Content-Type": ContentType });
-                scanner.res.end(result, "utf8");
+                if (!scanner.res.finished) {
+                    try {
+                        scanner.res.writeHead(200, { "Content-Type": ContentType });
+                        scanner.res.end(result, "utf8");
+                    } catch (error) {
+                        scanner.res.writeHead(500);
+                        scanner.res.end("error", "utf8");
+                    }
+                }
             }, scanner);
             }else{
                 scanner.res.writeHead(500);
