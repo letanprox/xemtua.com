@@ -155,6 +155,7 @@ module.exports = async (callback, scanner) => {
                             res.on('end',async function () {
                                 get_url = JSON.parse(datax);   
                                 data.url_temp = get_url.source;
+                                callback(JSON.stringify(data), 'application/json');
                                 model = scanner["modelxxemtua.com/danhsachurlshortvideo"];
                                 if(checkurl === 1){
                                     let newvalues = [{
@@ -171,7 +172,6 @@ module.exports = async (callback, scanner) => {
                                     }}]
                                     await model.dataModel.update(myquery, newvalues);
                                 }
-                                callback(JSON.stringify(data), 'application/json');
                             });
                         });
                         request.on('error', function (e) {
