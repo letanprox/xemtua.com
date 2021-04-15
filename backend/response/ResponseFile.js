@@ -31,8 +31,15 @@ module.exports = (res,req_bundle) => {
             }else {
 
               let endResponsive = (content) => {
-                res.writeHead(200, { "Content-Type": req_bundle.contentType });
-                res.end(content, "utf8");
+                if (!res.finished) {
+                  try {
+                    res.writeHead(200, { "Content-Type": req_bundle.contentType });
+                    res.end(content, "utf8");
+                  } catch (error) {
+                      res.writeHead(500);
+                      res.end("error", "utf8");
+                  }
+                } 
               }
               //File join HTML
               if(req_bundle.contentType === "text/html"){
