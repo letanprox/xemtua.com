@@ -142,6 +142,7 @@ function ClickPlayerContent (event) {
             showTotalItem();
             hideButtonSeason();
         }
+        AppendTotalItem();
         loadListEp();
     }else if(x == title_movie_player_slide){
         displayBarTitle("none","2px solid royalblue","none","none");
