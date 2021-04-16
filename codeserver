@@ -15,9 +15,16 @@ do
 	mkdir blackclover_tap${c}_
 done
 
-for ((c=151; c<=169; c++))
+
+for ((c=71; c<=91; c++))
 do  
-ffmpeg -i  Blackclover/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls Blackcloverm3u8/blackclover_tap${c}_/blackclover_tap${c}_.m3u8
+	mkdir bokuhero_tap${c}_
+done
+
+
+for ((c=71; c<=91; c++))
+do  
+ffmpeg -i  boku/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls bokum3u8/bokuhero_tap${c}_/bokuhero_tap${c}_.m3u8
 done
 
 

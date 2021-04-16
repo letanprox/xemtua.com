@@ -17,7 +17,11 @@ var check_list;
 var waitingXML = false;
 
 var index = 0;
-if(typeof GetUrlParameter('index') !== "undefined") index = Number(GetUrlParameter('index'));
+if(typeof GetUrlParameter('index') !== "undefined"){
+     index = Number(GetUrlParameter('index'));
+     $('title').empty();
+     $('title').append("index - " + index);
+}
 
 var backdex = 0;
 if(typeof GetUrlParameter('backdex') !== "undefined") backdex = Number(GetUrlParameter('backdex'));

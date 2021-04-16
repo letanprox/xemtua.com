@@ -27,6 +27,7 @@ var xhttp = new XMLHttpRequest();
                 $('title').empty();
                 $('title').append(decode_utf8(data.tentruyen) + " chap " + sochap);
                 $("#keywords").attr("content",decode_utf8(data.tentruyen) + " chap " + sochap +" , "+ decode_utf8(data.tentruyen) + " viet nam" +" , "+ decode_utf8(data.tentruyen) + " truyen " +" , doc truyen "+ decode_utf8(data.tentruyen) +" , "+ decode_utf8(data.tentruyen) + " chuong " + sochap);
+                $("#description").attr("content", "Đọc truyện " + decode_utf8(data.tentruyen) + " chap " + sochap + " việt sub với Xem Tua "  );
                 loadElementChap(data);
         }
     };
