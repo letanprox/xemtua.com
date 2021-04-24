@@ -487,7 +487,7 @@ function loadCheckLink(){
 //     xhttp.send();
 // }
 function AppendVideoJwplayer(link){
-    console.log(link)
+    if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/'),
     jwplayer("play_video_jw").setup({ 
         file: link,
         image: "https://cuongonepiece.com/image/reddit/Imageplayer.jpg",

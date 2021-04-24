@@ -16,15 +16,15 @@ do
 done
 
 
-for ((c=71; c<=91; c++))
+for ((c=1; c<=13; c++))
 do  
-	mkdir bokuhero_tap${c}_
+	mkdir gleipnir_tap${c}_
 done
 
 
-for ((c=71; c<=91; c++))
+for ((c=1; c<=13; c++))
 do  
-ffmpeg -i  boku/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls bokum3u8/bokuhero_tap${c}_/bokuhero_tap${c}_.m3u8
+ffmpeg -i  gleipnir/$c.mp4 -profile:v baseline -level 3.0 -s 1280x720 -start_number 0 -hls_time 5  -hls_list_size 0 -f hls gleipnirm3u8/gleipnir_tap${c}_/gleipnir_tap${c}_.m3u8
 done
 
 

@@ -26,6 +26,7 @@ function getCurrentTime(){
 }
 
 function decode_utf8( s ){
+    console.log(s)
     return decodeURI(s).replace(/0765547053/gi, "&");
 }
 
