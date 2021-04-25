@@ -488,6 +488,7 @@ function loadCheckLink(){
 // }
 function AppendVideoJwplayer(link){
     if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/'),
+    console.log(link)
     jwplayer("play_video_jw").setup({ 
         file: link,
         image: "https://cuongonepiece.com/image/reddit/Imageplayer.jpg",
