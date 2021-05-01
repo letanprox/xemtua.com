@@ -102,9 +102,8 @@ function LoadSeason(_somua,_khoangtap){
 }
 function loadPhim(){
     if(isloaded_movie == false){
-        var is_sync = false;
-        if(isloaded_ep == true) is_sync = true;
-        xhttp.open("GET", URLServer+"loadMovie", is_sync);
+        if(isloaded_ep == true) xhttp.open("GET", URLServer+"loadMovie", true);
+        else xhttp.open("GET", URLServer+"loadMovie?sophim="+sophim, false);
         xhttp.send();
     }else{
         scrollBarList();

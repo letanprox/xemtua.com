@@ -1,7 +1,7 @@
 const { count } = require("console");
 
 module.exports = async (callback, scanner) => {
-    let clock = 60;
+    let clock = 300;
     let head_params = scanner.head_params;
 
     if (scanner.req_bundle.index === 'topviewshortvideo'){

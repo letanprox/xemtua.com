@@ -79,6 +79,7 @@ module.exports = async (callback, scanner) => {
                 mua:data_mua,
                 danh_sach_mua:data_muas,
             }
+            await scanner["modelxcuongonepiece.com/danhsachtap"].dataModel.update({so_tap: sotap}, {$inc:{luot_xem: 1}});
             callback(JSON.stringify(data), 'application/json');
         }else{
             callback("that bai", 'application/json');
@@ -86,6 +87,7 @@ module.exports = async (callback, scanner) => {
     }
     //------------------------------------------------------------------------------------
     if (index === 'loadMovie') {
+        let sophim = Number(head_params.get('sophim'));
         //GET LIST PHIM
         let query = {}
         let projection = {}
@@ -93,6 +95,7 @@ module.exports = async (callback, scanner) => {
         let skip = 0;
         let limit = 0;
         let select = await scanner["modelxcuongonepiece.com/danhsachphim"].dataModel.select(query, projection, sort, skip, limit);
+        await scanner["modelxcuongonepiece.com/danhsachphim"].dataModel.update({so_phim: sophim}, {$inc:{luot_xem: 1}});
         callback(JSON.stringify(select), 'application/json');
     }
     //------------------------------------------------------------------------------------
