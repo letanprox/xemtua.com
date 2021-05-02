@@ -32,3 +32,5 @@ var priorlink = 0;
 
 var iloadLink = false;
 var intervaltime_;
+
+var codeLoad = 'DgIFzjKn45IsxNCgZ4xyzfWqT';

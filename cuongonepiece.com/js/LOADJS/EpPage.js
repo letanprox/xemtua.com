@@ -248,6 +248,8 @@ function AppendVideoEmbed(link){
     $('#customiframe').append(decode_utf8(link));
 }
 function AppendVideoJwplayer(link){
+    if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/'),
+    console.log(link)
     $('#play_video_jw').empty();
     jwplayer("play_video_jw").setup({ 
         file: decode_utf8(link),
