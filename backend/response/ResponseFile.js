@@ -13,6 +13,7 @@ var preventFolder = [
 
 //READ AND RETURN CLIENT
 module.exports = (res,req_bundle) => {
+        req_bundle.filePath = String(req_bundle.filePath).replace(/\\/g,"/");
         // Read File
         fs.readFile(req_bundle.filePath, (err, content) => {
             if (err) {
