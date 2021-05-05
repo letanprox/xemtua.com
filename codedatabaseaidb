@@ -41,3 +41,6 @@ mongoexport --host localhost --port 27017 --db roxydb --collection danh_sach_dri
 
 mongoimport --db aidb  --collection  danh_sach_linktap --file danhsachlinktap.json
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linktap --type json --out  danhsachlinktap.json
+
+
+aot tempdelet sophim=7
