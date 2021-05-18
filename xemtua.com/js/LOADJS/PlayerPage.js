@@ -46,7 +46,7 @@ xhttp.onreadystatechange = function() {
             intervaltime_ = setInterval(function(){ 
                 console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
-            }, 7000);
+            }, 4500);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadSeason")){
@@ -95,7 +95,7 @@ xhttp.onreadystatechange = function() {
             intervaltime_ = setInterval(function(){ 
                 console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
-            }, 7000);
+            }, 4500);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadPlayerOva")){
@@ -135,7 +135,7 @@ xhttp.onreadystatechange = function() {
             intervaltime_ = setInterval(function(){ 
                 console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
-            }, 7000);
+            }, 4500);
         }
         //----------------------------------------------------------------------------->
         if(this.responseURL.includes("loadListEp")){
