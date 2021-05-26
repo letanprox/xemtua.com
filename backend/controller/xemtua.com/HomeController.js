@@ -7,7 +7,7 @@ module.exports = async (callback, scanner) => {
             anh_bia: 0,_id: 0 , luot_xem: 0, dem_so: 0,
         }
         let sort = {dem_so: -1}
-        let limit = 6;
+        let limit = 12;
         let select = await model.dataModel.select({}, projection, sort, 0, limit);
         select = JSON.parse(JSON.stringify(select));
 
