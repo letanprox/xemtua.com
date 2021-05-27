@@ -44,7 +44,7 @@ xhttp.onreadystatechange = function() {
             hideLoadingVideo(); 
 
             intervaltime_ = setInterval(function(){ 
-                console.log("getlink")
+                // console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
             }, 4500);
         }
@@ -93,7 +93,7 @@ xhttp.onreadystatechange = function() {
             hideLoadingVideo(); 
 
             intervaltime_ = setInterval(function(){ 
-                console.log("getlink")
+                // console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
             }, 4500);
         }
@@ -133,7 +133,7 @@ xhttp.onreadystatechange = function() {
             hideLoadingVideo(); 
 
             intervaltime_ = setInterval(function(){ 
-                console.log("getlink")
+                // console.log("getlink")
                 if(iloadLink === false) loadCheckLink();
             }, 4500);
         }
@@ -488,7 +488,7 @@ function loadCheckLink(){
 // }
 function AppendVideoJwplayer(link){
     if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/'),
-    console.log(link)
+    // console.log(link)
     jwplayer("play_video_jw").setup({ 
         file: link,
         image: "https://cuongonepiece.com/image/reddit/Imageplayer.jpg",

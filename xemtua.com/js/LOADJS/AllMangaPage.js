@@ -19,7 +19,7 @@ xhttp.onreadystatechange = function() {
 
 
 function loadListTruyen(){
-    console.log(URLServer+"listtruyen?page"+page)
+    // console.log(URLServer+"listtruyen?page"+page)
     xhttp.open("GET", URLServer+"listtruyen?page="+page, false);
     xhttp.send();
 }
