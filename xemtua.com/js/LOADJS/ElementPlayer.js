@@ -52,4 +52,4 @@ var tukhoaphim = String(window.location.href.split("/")[4]);
 var iloadLink = false;
 var intervaltime_;
 
-var codeLoad = 'DgIFzjKn45IsxNCgZ4xyzfWqT';
+var codeLoad = 'khonglammamuoncoanthichicoandaubuoiancut';
