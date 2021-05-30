@@ -371,7 +371,7 @@ function AppendListEp(_danhsachtap){
             elements = elements + '<a href="/episode/'+tukhoaphim+'/'+_danhsachtap[i].so_tap+'"><div id="ep_choice"' ;
         }else elements = elements + '<a href="/episode/'+tukhoaphim+'/'+_danhsachtap[i].so_tap+'"><div ';
         elements = elements +'class="item_player_slide">'+
-                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachtap[i].anh_bia)).replace(/http:/gi, "https:")+'" alt="Tập '+_danhsachtap[i].so_tap+' - '+_danhsachtap[i].ten_tap+'"></div>'+
+                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachtap[i].anh_bia)).replace(/http:/gi, "https:").replace(/cuongonepiece.com/gi, "xemtua.com")+'" alt="Tập '+_danhsachtap[i].so_tap+' - '+_danhsachtap[i].ten_tap+'"></div>'+
                                 '<div class="title_item_player_slide">Tập '+_danhsachtap[i].so_tap+' - '+_danhsachtap[i].ten_tap+'</div>'+
                                 '<div class="view_item_player_slide">'+_danhsachtap[i].luot_xem+' lượt xem</div>'+
                                 '</div></a>';
@@ -394,7 +394,7 @@ function AppendListMovie(_danhsachphim){
             elements = elements + '<a href="/movie/'+_danhsachphim[i].tu_khoa+'"><div id="ep_choice"' ;
         }else elements = elements + '<a href="/movie/'+_danhsachphim[i].tu_khoa+'"><div ';
         elements = elements +'class="item_player_slide">'+
-                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachphim[i].anh_bia)).replace(/http:/gi, "https:")+'" alt="'+decode_utf8(_danhsachphim[i].ten_phim)+'"></div>'+
+                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachphim[i].anh_bia)).replace(/http:/gi, "https:").replace(/cuongonepiece.com/gi, "xemtua.com")+'" alt="'+decode_utf8(_danhsachphim[i].ten_phim)+'"></div>'+
                                 '<div class="title_item_player_slide">'+_danhsachphim[i].ten_phimle+'</div>'+
                                 '<div class="view_item_player_slide">'+_danhsachphim[i].luot_xem+' lượt xem</div>'+
                                 '</div></a>';
@@ -417,7 +417,7 @@ function AppendListOva(_danhsachova){
             elements = elements + '<a href="/ova/'+_danhsachova[i].tu_khoa+'"><div id="ep_choice"' ;
         }else elements = elements + '<a href="/ova/'+_danhsachova[i].tu_khoa+'"><div ';
         elements = elements +'class="item_player_slide">'+
-                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachova[i].anh_bia)).replace(/http:/gi, "https:")+'" alt="'+decode_utf8(_danhsachova[i].ten_ova)+'"></div>'+
+                                '<div class="img_item_player_slide"><img src="'+(decode_utf8(_danhsachova[i].anh_bia)).replace(/http:/gi, "https:").replace(/cuongonepiece.com/gi, "xemtua.com")+'" alt="'+decode_utf8(_danhsachova[i].ten_ova)+'"></div>'+
                                 '<div class="title_item_player_slide">'+_danhsachova[i].ten_ova+'</div>'+
                                 '<div class="view_item_player_slide">'+_danhsachova[i].luot_xem+' lượt xem</div>'+
                                 '</div></a>';
