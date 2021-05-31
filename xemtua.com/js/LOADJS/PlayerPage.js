@@ -487,7 +487,7 @@ function loadCheckLink(){
 //     xhttp.send();
 // }
 function AppendVideoJwplayer(link){
-    if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/'),
+    if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/').replace(/kanda.xemtua.xyz/gi, "cuongonepiece.com"),
     // console.log(link)
     jwplayer("play_video_jw").setup({ 
         file: link,
