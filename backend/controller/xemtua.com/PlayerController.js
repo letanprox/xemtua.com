@@ -291,13 +291,12 @@ module.exports = async (callback, scanner) => {
             _id: 0, so_tap: 0, so_phim: 0, thoi_gian:0 , id_token:0, id_video:0
         }
         let selectx = await model.dataModel.select(query, projection, {}, 0, 0);
-        let linkfb = '';
+        let linkfb = "false";
         if(selectx.length > 0)
         if(selectx[0].hasOwnProperty('url_video')) {
             linkfb = selectx[0].url_video;
-        }else{
-            linkfb = "false";
         }
+        
         if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
