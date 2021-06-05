@@ -192,11 +192,27 @@ module.exports = async (callback, scanner) => {
         Implement('modelxxemtua.com/danhsachdriveapi','driveapi',true);
     }
 
-
     if(index === 'drivelist'){
         keyquery = [ 'name' ];
         domain = [ 'id' , 'index' ];
         Implement('modelxxemtua.com/danhsachdrivelist','drivelist',true);
+    }
+
+    ////////////////
+    if(index === 'linhfb'){
+        keyquery   = [ 'so_phim' , 'so_tap' ];
+        domain = [ 'id_token' ,  'id_video' , 'url_video' , 'thoi_gian' ];
+        Implement('modelxxemtua.com/linhfb','linhfb',true);
+    }
+    if(index === 'linhtokenfb'){
+        keyquery   = ['id_token'];
+        domain = [ 'id_page' ,'token' , 'name' , 'thoi_gian'  ];
+        Implement('modelxxemtua.com/linhtokenfb','linhtokenfb',true);
+    }
+    if(index === 'lienketphim'){
+        keyquery   = ['name_phim'];
+        domain = [ 'so_phim' ];
+        Implement('modelxxemtua.com/lienketphim','lienketphim',true);
     }
 
 //------------------------------------------------------------------------------------------------

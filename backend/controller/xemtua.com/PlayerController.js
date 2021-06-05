@@ -286,8 +286,17 @@ module.exports = async (callback, scanner) => {
         let select = await model.dataModel.select(query, projection, {}, 0, 0);
         select = JSON.parse(JSON.stringify(select));
 
-        let linkfb = await LoadVideoTapFB( Number(head_params.get('sophim')) , Number(head_params.get('sotap')) ,scanner);
-        if(linkfb === "that bai") linkfb = "false";
+        model = scanner["modelxxemtua.com/linhfb"];
+        query = {so_tap: Number(head_params.get('sotap')) , so_phim:  Number(head_params.get('sophim')) }
+        projection = {
+            _id: 0, so_tap: 0, so_phim: 0, thoi_gian:0 , id_token:0, id_video:0
+        }
+        select = await model.dataModel.select(query, projection, {}, 0, 0);
+        if(String(select[0].url_video) !== 'undefined' || select[0].url_video !== undefined){
+            linkfb = select[0].url_video;
+        }else{
+            linkfb = "false";
+        }
 
         if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');

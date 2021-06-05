@@ -474,27 +474,16 @@ function loadCheckLink(){
     xhttp.open("GET", URLServer+urlloadCheck, true);
     xhttp.send();
 }
-// function loadLinkFb(){
-//     var urlloadFB;
-//     if(main_element === 1){
-//         urlloadFB = "loadVideoTapFB?sotap="+sotap+"&sophim="+sophim;
-//     }else if(main_element === 2){
-//         urlloadFB = "loadVideoPhimleFB?sophimle="+sophimle+"&sophim="+sophim;
-//     }else if(main_element === 3){
-//         urlloadFB = "loadVideoOvaFB?soova="+soova+"&sophim="+sophim;
-//     }
-//     xhttp.open("GET", URLServer+urlloadFB, false);
-//     xhttp.send();
-// }
+
 function AppendVideoJwplayer(link){
     if(link.includes('.mp4')) link = link.replace('xyz/','xyz/'+codeLoad+'/').replace(/kanda.xemtua.xyz/gi, "cuongonepiece.com"),
-    // console.log(link)
     jwplayer("play_video_jw").setup({ 
         file: link,
         image: "https://cuongonepiece.com/image/reddit/Imageplayer.jpg",
         autostart: false,
     });
 }
+
 function AppendVideoEmbed(link){
     $('#play_video_jw').empty();
     $('#play_video_jw').append('<div id="customiframe"></div>')

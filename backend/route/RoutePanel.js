@@ -81,6 +81,10 @@ module.exports = (setroute = require("./Setroute")) => {
 
     Implement2("driveapi");
     Implement2("drivelist");
+
+    Implement2("linhfb");
+    Implement2("linhtokenfb");
+    Implement2("lienketphim");
     
     return setroute.getRoute();
 }

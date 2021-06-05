@@ -43,4 +43,10 @@ mongoimport --db aidb  --collection  danh_sach_linktap --file danhsachlinktap.js
 mongoexport --host localhost --port 27017 --db aidb --collection danh_sach_linktap --type json --out  danhsachlinktap.json
 
 
-aot tempdelet sophim=7
+mongoexport --host localhost --port 27017 --db aidb --collection linhfb --type json --out  linhfb.json
+mongoexport --host localhost --port 27017 --db aidb --collection linhtokenfb --type json --out  linhtokenfb.json
+mongoexport --host localhost --port 27017 --db aidb --collection lienketphim --type json --out  lienketphim.json
+
+mongoimport --db aidb  --collection  linhfb  --file linhfb.json
+mongoimport --db aidb  --collection  linhtokenfb  --file linhtokenfb.json
+mongoimport --db aidb  --collection  lienketphim  --file lienketphim.json

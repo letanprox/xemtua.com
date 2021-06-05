@@ -216,6 +216,23 @@ if(model === "drivelist"){
     setURL("drivelist" , "x" , "x");
 }
 
+///////////////////////////////////
+
+if(model === "linhfb"){
+    item = [ 'so_phim' , 'so_tap' , 'id_token' ,  'id_video' , 'url_video' , 'thoi_gian' ];
+    setURL("linhfb" , "x" , "x");
+}
+
+if(model === "linhtokenfb"){
+    item = [ 'id_token' , 'id_page' , 'token' , 'name' , 'thoi_gian' ];
+    setURL("linhtokenfb" , "x" , "x");
+}
+
+if(model === "lienketphim"){
+    item = [   'name_phim' , 'so_phim'  ];
+    setURL("lienketphim" , "x" , "x");
+}
+
 setInsert();
 
 document.getElementById("thoi_gian").value = getCurrentTime();

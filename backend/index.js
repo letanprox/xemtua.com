@@ -49,6 +49,9 @@ const listModel = [
 'xemtua.com/danhsachdriveapi',
 'xemtua.com/danhsachdrivelist',
 
+'xemtua.com/lienketphim',
+'xemtua.com/linhfb',
+'xemtua.com/linhtokenfb',
 
 
 'cuongonepiece.com/danhsachtap',
