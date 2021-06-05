@@ -285,7 +285,6 @@ module.exports = async (callback, scanner) => {
         }
         let select = await model.dataModel.select(query, projection, {}, 0, 0);
         select = JSON.parse(JSON.stringify(select));
-
         model = scanner["modelxxemtua.com/linhfb"];
         query = {so_tap: Number(head_params.get('sotap')) , so_phim:  Number(head_params.get('sophim')) }
         projection = {
@@ -297,7 +296,6 @@ module.exports = async (callback, scanner) => {
         }else{
             linkfb = "false";
         }
-
         if(select.length > 0) callback(JSON.stringify({direct :String(select[0].url_direct), embed :String(select[0].url_embed), linkfb:linkfb}), 'application/json');
         else callback(JSON.stringify({direct :"false", embed :"false", linkfb:linkfb}), 'application/json');
     }
