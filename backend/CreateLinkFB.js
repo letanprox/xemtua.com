@@ -26,6 +26,8 @@ let loadLinkVideoFB = async (so_tap,so_phim,token ,id_video) => {
     fetchs = await fetchs.json();
     data_array = JSON.parse(JSON.stringify(fetchs,null,2));
 
+    console.log( 'so_phim='+ Number(so_phim) + 'so_tap=' + Number(so_tap))
+
      dbo = await db.db("aidb");
      dbo = await dbo.collection("linhfb");
 
@@ -41,8 +43,12 @@ let loadLinkVideoFB = async (so_tap,so_phim,token ,id_video) => {
 
     let select = await dbo.find({}).toArray();
 
+    let pkk = 0;
 
     for(let i = 0; i < select.length; i++){
+
+        setTimeout(function(){
+
         let id_token = select[i].id_token;
         let token = select[i].token;
         let id_page = select[i].id_page;
@@ -52,14 +58,14 @@ let loadLinkVideoFB = async (so_tap,so_phim,token ,id_video) => {
         select_ = await dbo.find({id_token:Number(id_token)}).toArray();
         
         for(let k = 0; k < select_.length; k++){
+            
             loadLinkVideoFB(select_[k].so_tap, select_[k].so_phim, token , select_[k].id_video)
         }
 
+        pkk = pkk + 1;
+
+        },1000*20*pkk)
+
     }
-
-
-
-    // let select = await dbo.find({}).toArray();
-    //     select = JSON.parse(JSON.stringify(select[0]));
 
 });
