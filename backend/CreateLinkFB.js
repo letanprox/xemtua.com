@@ -47,7 +47,7 @@ let loadLinkVideoFB = async (so_tap,so_phim,token ,id_video) => {
 
     for(let i = 0; i < select.length; i++){
 
-        setTimeout(function(){
+        setTimeout(async function(){
 
         let id_token = select[i].id_token;
         let token = select[i].token;
