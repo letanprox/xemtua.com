@@ -190,10 +190,17 @@ xhttp.onreadystatechange = function() {
         if(this.responseURL.includes("checkLinkTap") || this.responseURL.includes("checkLinkPhimle") || this.responseURL.includes("checkLinkOva")){
        
             if(this.responseText !== "that bai"){
-
                 var checklink = JSON.parse(this.responseText);
-
-
+                if(checklink.linkfb == "false" || checklink.linkfb == "undefined"){
+                    document.getElementById('LoadVideoFB').style.display = "none";
+                }else{
+                    url_fb = checklink.linkfb.replace(/"/gi, "");
+                    if(priorlink == 0){ 
+                        document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
+                        AppendVideoJwplayer(url_fb);
+                        priorlink = 1;
+                    }
+                }
                 if(checklink.direct == "false"){
                     document.getElementById('LoadVideoDirect').style.display = "none";
                 }else{
@@ -204,20 +211,6 @@ xhttp.onreadystatechange = function() {
                         priorlink = 1;
                     }
                 }
-
-
-                if(checklink.linkfb == "false"){
-                    document.getElementById('LoadVideoFB').style.display = "none";
-                }else{
-                    url_fb = checklink.linkfb.replace(/"/gi, "");
-                    if(priorlink == 0){ 
-                        document.getElementById('LoadVideoFB').style.backgroundColor = "tomato";
-                        AppendVideoJwplayer(url_fb);
-                        priorlink = 1;
-                    }
-                }
-                
-
                 if(checklink.embed == "false"){
                     document.getElementById('LoadVideoEmbed').style.display = "none";
                 }else{
