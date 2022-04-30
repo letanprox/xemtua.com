@@ -20,5 +20,4 @@ Code thì không dùng FrameWork nào cả, chỉ dùng 1 ngôn ngữ chính là
 
 <img width="1424" alt="Screen Shot 2022-04-30 at 11 45 28" src="https://user-images.githubusercontent.com/54614140/166091557-c0811b78-3160-4b6c-804e-b54acdef88b3.png">
 
-
-HOPE YOU GUY LIKE THIS!!!
+:)
