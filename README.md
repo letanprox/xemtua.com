@@ -5,6 +5,12 @@ Code thì không dùng FrameWork nào cả, chỉ dùng 1 ngôn ngữ chính là
 Con server chính dùng chạy giao diện và hệ thống, tất cả video và hình ảnh đều được lưu trên các nguồn: Facebook, Drive, Imgur...
 
 
+Các bước Run Project:
+- Tạo User mongodb với tên "tan" và pass "12345"
+- Vào thư mục "backend", run lệnh "node index".
+- Port: 80.
+
+
 <img width="1425" alt="Screen Shot 2022-04-30 at 11 41 41" src="https://user-images.githubusercontent.com/54614140/166091531-e3bcc816-46a3-476c-ab15-95d149aa1489.png">
 
 <img width="1424" alt="Screen Shot 2022-04-30 at 11 46 02" src="https://user-images.githubusercontent.com/54614140/166091544-53a01176-c6d0-4fac-af51-66cf13b41965.png">
