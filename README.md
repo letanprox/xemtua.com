@@ -1,6 +1,8 @@
 Một trang web film lậu mà mình đã viết ra với hơn 100 nghìn traffic/tháng, với xấp xỉ 50 nghìn người truy cập. Nhưng mình không đủ tiền duy trì server!..Nên từ bỏ rồi!!!
 
-Code thì không dùng FrameWork nào cả, chỉ dùng 1 ngôn ngữ chính là Javascipt (Nodejs cho server):
+Code thì không dùng FrameWork nào cả, chỉ dùng 1 ngôn ngữ chính là Javascipt (Nodejs cho server).
+
+Con server chính dùng chạy giao diện và hệ thống, tất cả video và hình ảnh đều được lưu trên các nguồn: Facebook, Drive, Imgur...
 
 
 <img width="1425" alt="Screen Shot 2022-04-30 at 11 41 41" src="https://user-images.githubusercontent.com/54614140/166091531-e3bcc816-46a3-476c-ab15-95d149aa1489.png">
