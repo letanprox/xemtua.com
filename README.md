@@ -1,4 +1,4 @@
-Một trang web film lậu mà mình đã viết ra với hơn 100 nghìn traffic/tháng, với xấp xỉ 50 nghìn người truy cập. Nhưng mình không đủ tiền duy trì server!..Nên từ bỏ rồi!!!
+Một trang web film mà mình đã viết ra với hơn 100 nghìn traffic/tháng, với xấp xỉ 50 nghìn người truy cập. Nhưng mình không đủ tiền duy trì server!..Nên từ bỏ rồi!!!
 
 Code thì không dùng FrameWork nào cả, chỉ dùng 1 ngôn ngữ chính là Javascipt (Nodejs cho server).
 
