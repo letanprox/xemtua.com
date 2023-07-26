@@ -2,6 +2,8 @@ A movie website helps me gain more than 100 thousand traffic a month, with appro
 
 I don't use any frameworks or tools. The only language for the entire project is Javascript.
 
+Database designed base on MongoDB patterns.
+
 All resources were saved on Google, Facebook, and Instagram via accessing API.
 
 Run Project:
